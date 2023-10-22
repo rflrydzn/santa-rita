@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Styling for the card container */
+        .attraction-card {
+            width: 450px; /* Initial width */
+            max-width: 100%; /* Responsive width */
+            height: 280px;
+            background-size: cover;
+            margin: 10px;
+            display: inline-block;
+            position: relative;
+            background-image: url(images/church1.png);
+            border: 1px solid #ccc;
+            border-radius: 2rem;
+            transition: transform 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        /* Styling for the content inside the card */
+        .attraction-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: none; /* Adjust the last value for transparency (0.5 for 50% transparency) */
+            color: #fff;
+            padding: 10px;
+        }
+
+        /* Styling for the heading and paragraph */
+        .attraction-title {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .attraction-description {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .attraction-card:hover {
+            transform: scale(1.05); /* Increase size on hover */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="attraction-card">
+        <div class="attraction-content">
+            <h1 class="attraction-title">Attraction 1</h1>
+            <p class="attraction-description">Description of Attraction 1.</p>
+        </div>
+    </div>
+
+    <div class="attraction-card">
+        <div class="attraction-content">
+            <h1 class="attraction-title">Attraction 2</h1>
+            <p class="attraction-description">Description of Attraction 2.</p>
+        </div>
+    </div>
+
+    <div class="attraction-card">
+        <div class="attraction-content">
+            <h1 class="attraction-title">Attraction 3</h1>
+            <p class="attraction-description">Description of Attraction 3.</p>
+        </div>
+    </div>
+</body>
+</html>

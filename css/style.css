@@ -1,0 +1,265 @@
+*{
+    margin: 0;
+    border: 0;
+    
+}
+
+.nav{
+    background-color: #f0f0f0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    font-family: 'Readex Pro';
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  
+.introtext h1{
+  position: absolute;
+  background: none;
+  color: white;
+  
+}
+
+.church {
+  background-color: white;
+  width: 100%;
+  margin: 0;
+  padding-top: 60px;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 60px;
+}
+
+.church img {
+  width: 70%; /* Make the image responsive to the container's width */
+   /* Ensure the image doesn't exceed its original size */
+  height: auto; /* Maintain the image's aspect ratio */
+}
+
+.text-card {
+  position: absolute;
+  top: 50%; /* Vertically center the card */
+  left: 70%; /* Horizontally center the card */
+  transform: translate(-50%, -50%); /* Center the card */
+  background-color: white;
+  padding: 3%; /* Use relative units for padding */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  max-width: 30%; /* Adjust the width based on your design */
+}
+
+.text-card h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 2em;
+  background-color: white;
+}
+
+.text-card p {
+  font-family: 'Helvetica';
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  background-color: white;
+  color: #4c4c6c;
+}
+
+
+
+.text-card a{
+  text-decoration: none;
+  background-color: #55634a;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 800;
+  padding: 3% 7%
+  
+  
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .text-card {
+    padding: 8% 4%; /* Adjust padding for smaller screens */
+    max-width: 90%; /* Adjust the width for smaller screens */
+  }
+
+  .text-card h1 {
+    font-size: 1.5em; /* Adjust font size for smaller screens */
+  }
+
+  .text-card p {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+}
+
+/* Media query for smaller screens */
+
+
+
+.explore img {
+  width: 100%; /* Make the image responsive within the container */
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+   .explore p{
+    font-size: 50px; 
+    
+  }
+}
+
+
+
+
+/* Default styles for text overlay */
+.text-overlay {
+  position: absolute;
+  max-width: 40%;
+  width: 100%;
+  top: 15.5%;
+  left: 53.5%;
+  background-color: none; /* 'none' is not a valid value; remove it */
+}
+
+
+.text-overlay a {
+  background-color: #502670;
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 800;
+  padding: 1%; /* Use relative units for padding (e.g., percentage or vw) */
+  border-radius: 5px;
+  
+}
+
+.text-overlay p{
+  font-size: 1vw; /* Use viewport width (vw) for a responsive font size */
+  font-family: 'Verdana', sans-serif; /* Provide a fallback font-family */
+  color: #333332;
+  line-height: 1.4; /* You can use unitless values for line-height, which is relative to the font size */
+  margin-bottom: 10px;
+}
+
+.text-overlay1 {
+  position: absolute;
+  max-width: 26%;
+  width: 100%;
+  top: 42%;
+  left: 21.5%;
+  background-color: none; /* 'none' is not a valid value; remove it */
+}
+
+.text-overlay1 a {
+  background-color: #ff49a3;
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 800;
+  padding: 1%; /* Use relative units for padding (e.g., percentage or vw) */
+  border-radius: 5px;
+  float: right;
+  
+}
+
+.text-overlay1 p{
+  font-size: 1vw; /* Use viewport width (vw) for a responsive font size */
+  font-family: 'Verdana', sans-serif; /* Provide a fallback font-family */
+  color: #333332;
+  line-height: 1.4; /* You can use unitless values for line-height, which is relative to the font size */
+  margin-bottom: 10px;
+}
+
+.text-overlay2 {
+  position: absolute;
+  max-width: 35%;
+  width: 100%;
+  top: 61.5%;
+  left: 51.3%;
+  background-color: none; /* 'none' is not a valid value; remove it */
+}
+
+.text-overlay2 a {
+  background-color: #502670;
+  text-decoration: none;  
+  color: white;
+  font-family: sans-serif;
+  font-weight: 800;
+  padding: 1%; /* Use relative units for padding (e.g., percentage or vw) */
+  border-radius: 5px;
+  
+  
+}
+
+.text-overlay2 p{
+  font-size: 1vw; /* Use viewport width (vw) for a responsive font size */
+  font-family: 'Verdana', sans-serif; /* Provide a fallback font-family */
+  color: #333332;
+  line-height: 1.4; /* You can use unitless values for line-height, which is relative to the font size */
+  margin-bottom: 10px;
+}
+
+.text-overlay3 {
+  position: absolute;
+  max-width: 30%;
+  width: 100%;
+  top: 82%;
+  left: 20%;
+  background-color: none; /* 'none' is not a valid value; remove it */
+  
+}
+
+.text-overlay3 a {
+  background-color: #502670;
+  text-decoration: none;  
+  color: white;
+  font-family: sans-serif;
+  font-weight: 800;
+  padding: 1%; /* Use relative units for padding (e.g., percentage or vw) */
+  border-radius: 5px;
+  float: right;
+  
+  
+}
+
+.text-overlay3 p{
+  font-size: 1vw; /* Use viewport width (vw) for a responsive font size */
+  font-family: 'Verdana', sans-serif; /* Provide a fallback font-family */
+  color: #333332;
+  line-height: 1.4; /* You can use unitless values for line-height, which is relative to the font size */
+  margin-bottom: 10px;
+}
+
+/* Media query for lower screen resolutions (e.g., max-width 768px) */
+@media screen and (max-width: 768px) {
+  .text-overlay {
+    max-width: 40%; /* Adjust the width as needed */
+  }
+
+  .text-overlay p {
+    font-size: 1.5vw; /* Increase font size for smaller screens */
+  }
+
+  .text-overlay a{
+    padding: 1%;
+    font-size: 10px;
+
+  }
+}
