@@ -1,0 +1,313 @@
+*{
+    margin: 0;
+    border: 0;
+    
+}
+
+.nav{
+    background-color: #f0f0f0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    font-family: 'Readex Pro';
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  
+.introtext h1{
+  position: absolute;
+  background: none;
+  color: white;
+  
+}
+
+.church {
+  background-color: white;
+  width: 100%;
+  margin: 0;
+  padding-top: 60px;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 60px;
+}
+
+.church img {
+  width: 70%; /* Make the image responsive to the container's width */
+   /* Ensure the image doesn't exceed its original size */
+  height: auto; /* Maintain the image's aspect ratio */
+}
+
+.text-card {
+  position: absolute;
+  top: 50%; /* Vertically center the card */
+  left: 70%; /* Horizontally center the card */
+  transform: translate(-50%, -50%); /* Center the card */
+  background-color: white;
+  padding: 3%; /* Use relative units for padding */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  max-width: 30%; /* Adjust the width based on your design */
+}
+
+.text-card h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 2em;
+  background-color: white;
+}
+
+.text-card p {
+  font-family: 'Helvetica';
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  background-color: white;
+  color: #4c4c6c;
+  margin-bottom: 6%;
+}
+
+
+
+.text-card a{
+  text-decoration: none;
+  background-color: #55634a;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 800;
+  padding: 3% 7%;
+}
+
+@media screen and (max-width: 768px) {
+  .text-card{
+    width: 100%;
+    height: 50%;
+  }
+
+  .text-card p{
+    font-size: 13px;
+  }
+
+  .text-card h1{
+    font-size: 15px;
+  }
+
+  .text-card a{
+    padding: 1% 4%;
+    font-weight: 800;
+  }
+}
+
+@media screen and (max-width: 629px) {
+  .text-card{
+    width: 100%;
+    height: 50%;
+  }
+
+  .text-card p{
+    font-size: 8px;
+  }
+
+  .text-card h1{
+    font-size: 9.5px;
+  }
+
+  .text-card a{
+    padding: 4px 3px;
+    font-weight: 520;
+    font-size: 10px;
+  }
+}
+.explore img {
+  width: 100%; /* Make the image responsive within the container */
+  height: auto;
+}
+
+
+.right{
+  
+  max-width: 50%;
+  width: 100%;
+  margin-left: 1%;
+  
+  
+}
+
+#right1{
+  width: 95%;
+}
+
+#right11{
+  width: 75%;
+}
+
+#p1{
+  
+  width: 100%;
+}
+
+.right2{
+  
+  max-width: 50%;
+  width: 100%;
+  margin-right: 1%;
+  text-align: right;
+  flex: 1;
+  order: 1;
+  
+}
+
+/* Default styles for text overlay */
+.discover-container img{
+  width: 40%;
+}
+
+.discover-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 75%;
+  display: flex;
+  align-items: flex-start;
+  background-color: none; /* 'none' is not a valid value; remove it */
+  margin-top: 3%;
+}
+
+
+.left{
+  width: 100%;
+  max-width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.left img{
+  width: 100%;
+  max-width: 80%;
+  align-self: center;
+}
+
+.left2{
+  
+  width: 100%;
+  max-width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  
+  flex: 1;
+  order: 2;
+  
+}
+.left2 img{
+  width: 80%;
+  max-width: 80%;
+  align-self: center;
+ 
+}
+
+
+.discover-container a {
+  background-color: #502670;
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 800;
+  padding: 1%; /* Use relative units for padding (e.g., percentage or vw) */
+  border-radius: 5px;
+}
+
+#urban {
+  background-color: #ff49a3;
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 800;
+  padding: 1%; /* Use relative units for padding (e.g., percentage or vw) */
+  border-radius: 5px;
+}
+
+.discover-container p{
+  font-size: 1vw; /* Use viewport width (vw) for a responsive font size */
+  font-family: 'Verdana', sans-serif; /* Provide a fallback font-family */
+  color: #333332;
+  line-height: 1.4; /* You can use unitless values for line-height, which is relative to the font size */
+  margin-bottom: 10px;
+}
+
+
+
+/* Media query for lower screen resolutions (e.g., max-width 768px) */
+@media screen and (max-width: 768px) {
+  .discover-container {
+    max-width: 100%; /* Adjust the width as needed */
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  }
+
+  #right1{
+    width: 100%;
+  }
+
+
+  #p1{
+    
+    width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .right2{
+    order: 2;
+  }
+
+  .left2{
+    order: 1;
+  }
+
+  .left{
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .right{
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .left2{
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    
+  }
+
+  .right2{
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    
+  }
+
+  #right11{
+    width: 95%;
+  }
+}
