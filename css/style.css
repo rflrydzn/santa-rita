@@ -90,9 +90,6 @@ ul {
   font-family: sans-serif;
   font-weight: 800;
   padding: 3% 7%;
-  
-  
-  
 }
 
 @media screen and (max-width: 768px) {
@@ -115,16 +112,31 @@ ul {
   }
 }
 
+@media screen and (max-width: 629px) {
+  .text-card{
+    width: 100%;
+    height: 50%;
+  }
+
+  .text-card p{
+    font-size: 8px;
+  }
+
+  .text-card h1{
+    font-size: 9.5px;
+  }
+
+  .text-card a{
+    padding: 4px 3px;
+    font-weight: 520;
+    font-size: 10px;
+  }
+}
 .explore img {
   width: 100%; /* Make the image responsive within the container */
   height: auto;
 }
 
-@media screen and (max-width: 768px) {
-  
-
- 
-}
 
 .right{
   
