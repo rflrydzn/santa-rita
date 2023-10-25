@@ -78,6 +78,7 @@ ul {
   letter-spacing: 0.5px;
   background-color: white;
   color: #4c4c6c;
+  margin-bottom: 6%;
 }
 
 
@@ -88,30 +89,31 @@ ul {
   color: white;
   font-family: sans-serif;
   font-weight: 800;
-  padding: 3% 7%
+  padding: 3% 7%;
+  
   
   
 }
 
-/* Media query for smaller screens */
 @media screen and (max-width: 768px) {
-  .text-card {
-    padding: 8% 4%; /* Adjust padding for smaller screens */
-    max-width: 90%; /* Adjust the width for smaller screens */
+  .text-card{
+    width: 100%;
+    height: 50%;
   }
 
-  .text-card h1 {
-    font-size: 1.5em; /* Adjust font size for smaller screens */
+  .text-card p{
+    font-size: 13px;
   }
 
-  .text-card p {
-    font-size: 14px; /* Adjust font size for smaller screens */
+  .text-card h1{
+    font-size: 15px;
+  }
+
+  .text-card a{
+    padding: 1% 4%;
+    font-weight: 800;
   }
 }
-
-/* Media query for smaller screens */
-
-
 
 .explore img {
   width: 100%; /* Make the image responsive within the container */
@@ -119,27 +121,96 @@ ul {
 }
 
 @media screen and (max-width: 768px) {
-   .explore p{
-    font-size: 50px; 
-    
-  }
+  
+
+ 
 }
 
+.right{
+  
+  max-width: 50%;
+  width: 100%;
+  margin-left: 1%;
+  
+  
+}
 
+#right1{
+  width: 95%;
+}
 
+#right11{
+  width: 75%;
+}
+
+#p1{
+  
+  width: 100%;
+}
+
+.right2{
+  
+  max-width: 50%;
+  width: 100%;
+  margin-right: 1%;
+  text-align: right;
+  flex: 1;
+  order: 1;
+  
+}
 
 /* Default styles for text overlay */
-.text-overlay {
-  position: absolute;
-  max-width: 40%;
+.discover-container img{
+  width: 40%;
+}
+
+.discover-container {
+  margin: 0 auto;
   width: 100%;
-  top: 15.5%;
-  left: 53.5%;
+  max-width: 75%;
+  display: flex;
+  align-items: flex-start;
   background-color: none; /* 'none' is not a valid value; remove it */
+  margin-top: 3%;
 }
 
 
-.text-overlay a {
+.left{
+  width: 100%;
+  max-width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.left img{
+  width: 100%;
+  max-width: 80%;
+  align-self: center;
+}
+
+.left2{
+  
+  width: 100%;
+  max-width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  
+  flex: 1;
+  order: 2;
+  
+}
+.left2 img{
+  width: 80%;
+  max-width: 80%;
+  align-self: center;
+ 
+}
+
+
+.discover-container a {
   background-color: #502670;
   text-decoration: none;
   color: white;
@@ -147,27 +218,9 @@ ul {
   font-weight: 800;
   padding: 1%; /* Use relative units for padding (e.g., percentage or vw) */
   border-radius: 5px;
-  
 }
 
-.text-overlay p{
-  font-size: 1vw; /* Use viewport width (vw) for a responsive font size */
-  font-family: 'Verdana', sans-serif; /* Provide a fallback font-family */
-  color: #333332;
-  line-height: 1.4; /* You can use unitless values for line-height, which is relative to the font size */
-  margin-bottom: 10px;
-}
-
-.text-overlay1 {
-  position: absolute;
-  max-width: 26%;
-  width: 100%;
-  top: 42%;
-  left: 21.5%;
-  background-color: none; /* 'none' is not a valid value; remove it */
-}
-
-.text-overlay1 a {
+#urban {
   background-color: #ff49a3;
   text-decoration: none;
   color: white;
@@ -175,11 +228,9 @@ ul {
   font-weight: 800;
   padding: 1%; /* Use relative units for padding (e.g., percentage or vw) */
   border-radius: 5px;
-  float: right;
-  
 }
 
-.text-overlay1 p{
+.discover-container p{
   font-size: 1vw; /* Use viewport width (vw) for a responsive font size */
   font-family: 'Verdana', sans-serif; /* Provide a fallback font-family */
   color: #333332;
@@ -187,79 +238,64 @@ ul {
   margin-bottom: 10px;
 }
 
-.text-overlay2 {
-  position: absolute;
-  max-width: 35%;
-  width: 100%;
-  top: 61.5%;
-  left: 51.3%;
-  background-color: none; /* 'none' is not a valid value; remove it */
-}
 
-.text-overlay2 a {
-  background-color: #502670;
-  text-decoration: none;  
-  color: white;
-  font-family: sans-serif;
-  font-weight: 800;
-  padding: 1%; /* Use relative units for padding (e.g., percentage or vw) */
-  border-radius: 5px;
-  
-  
-}
-
-.text-overlay2 p{
-  font-size: 1vw; /* Use viewport width (vw) for a responsive font size */
-  font-family: 'Verdana', sans-serif; /* Provide a fallback font-family */
-  color: #333332;
-  line-height: 1.4; /* You can use unitless values for line-height, which is relative to the font size */
-  margin-bottom: 10px;
-}
-
-.text-overlay3 {
-  position: absolute;
-  max-width: 30%;
-  width: 100%;
-  top: 82%;
-  left: 20%;
-  background-color: none; /* 'none' is not a valid value; remove it */
-  
-}
-
-.text-overlay3 a {
-  background-color: #502670;
-  text-decoration: none;  
-  color: white;
-  font-family: sans-serif;
-  font-weight: 800;
-  padding: 1%; /* Use relative units for padding (e.g., percentage or vw) */
-  border-radius: 5px;
-  float: right;
-  
-  
-}
-
-.text-overlay3 p{
-  font-size: 1vw; /* Use viewport width (vw) for a responsive font size */
-  font-family: 'Verdana', sans-serif; /* Provide a fallback font-family */
-  color: #333332;
-  line-height: 1.4; /* You can use unitless values for line-height, which is relative to the font size */
-  margin-bottom: 10px;
-}
 
 /* Media query for lower screen resolutions (e.g., max-width 768px) */
 @media screen and (max-width: 768px) {
-  .text-overlay {
-    max-width: 40%; /* Adjust the width as needed */
+  .discover-container {
+    max-width: 100%; /* Adjust the width as needed */
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  
   }
 
-  .text-overlay p {
-    font-size: 1.5vw; /* Increase font size for smaller screens */
+  #right1{
+    width: 100%;
   }
 
-  .text-overlay a{
-    padding: 1%;
-    font-size: 10px;
 
+  #p1{
+    
+    width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .right2{
+    order: 2;
+  }
+
+  .left2{
+    order: 1;
+  }
+
+  .left{
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .right{
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .left2{
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    
+  }
+
+  .right2{
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    
+  }
+
+  #right11{
+    width: 95%;
   }
 }
