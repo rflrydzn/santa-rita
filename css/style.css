@@ -2,6 +2,7 @@
     margin: 0;
     border: 0;
     
+    
 }
 
 .nav{
@@ -19,6 +20,7 @@ ul {
   
   li {
     float: left;
+    position: relative;
   }
   
   li a {
@@ -31,20 +33,15 @@ ul {
     font-weight: bold;
   }
   
-.introtext h1{
-  position: absolute;
-  background: none;
-  color: white;
-  
-}
+
 
 .church {
   background-color: white;
   width: 100%;
   margin: 0;
   padding-top: 60px;
-  position: relative;
   overflow: hidden;
+  position: absolute;
   padding-bottom: 60px;
 }
 
@@ -56,7 +53,7 @@ ul {
 
 .text-card {
   position: absolute;
-  top: 50%; /* Vertically center the card */
+  top: 50%;
   left: 70%; /* Horizontally center the card */
   transform: translate(-50%, -50%); /* Center the card */
   background-color: white;
@@ -110,6 +107,11 @@ ul {
     padding: 1% 4%;
     font-weight: 800;
   }
+
+  .introtext{
+    padding: 7% 2%;
+    max-width: 50%;
+  }
 }
 
 @media screen and (max-width: 629px) {
@@ -127,6 +129,8 @@ ul {
     font-weight: 520;
     font-size: 10px;
   }
+
+  
 }
 
 @media screen and (max-width: 360px) {
@@ -145,6 +149,25 @@ ul {
       font-weight: 520;
       font-size: 8px;
     }
+
+    .intro{
+      background-position: center;
+      width: 100%;
+      background-image: url(Home2.png);
+      
+    }
+}
+
+.intro{
+  font-family: 'Readex Pro';
+  color: white;
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.introtext{
+  padding: 7% 15%;
+  max-width: 50%;
 }
 .explore img {
   width: 100%; /* Make the image responsive within the container */
@@ -229,8 +252,8 @@ ul {
   
 }
 .left2 img{
-  width: 80%;
-  max-width: 80%;
+  width: 90%;
+  max-width: 100%;
   align-self: center;
  
 }
@@ -324,4 +347,60 @@ ul {
   #right11{
     width: 95%;
   }
+
+  .intro{
+    background-position: center;
+  }
 }
+
+
+.accessibility-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Styles for the dropdown menu */
+.accessibility-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1;
+  right: 0;
+}
+
+/* Show the dropdown menu on icon hover */
+.accessibility-icon:hover + .accessibility-menu {
+  display: block;
+}
+
+/* Style the dropdown menu items */
+.accessibility-menu-item {
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Styles for the navigation bar */
+
+
+/* Add a class for high contrast mode on the navigation bar */
+.high-contrast .nav {
+  background-color: #000; /* Black background in high contrast mode */
+  color: yellow; /* Yellow font color in high contrast mode */
+}
+
+#tourismh1{
+  font-family: 'Monsterrat', sans-serif; 
+  font-weight: 800; 
+  letter-spacing: 2px; 
+  text-align: center; 
+  padding-top: 5%; 
+  font-size: 60px; 
+  background-color: #f0f0f0;
+}
+

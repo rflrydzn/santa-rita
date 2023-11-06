@@ -1,0 +1,37 @@
+li .dropdown-content {
+    display: grid;
+    position: absolute;
+    background-color: #f0f0f0; /* Background color for the dropdown */
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    transition: opacity 0.3s;
+    opacity: 0;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+    
+}
+
+li .dropdown-content.show {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+    opacity: 1;
+    
+}
+/* Style individual office items */
+.office {
+    text-align: center;
+}
+
+.office img {
+    max-width: 100px;
+}
+
+.office p {
+    margin: 10px 0;
+    font-weight: bold;
+}
