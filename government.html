@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/5c825ad570.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="accessibility.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Readex%20Pro">
+       
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Readex Pro';
+            
+        }
+
+        .nav{
+    background-color: #f0f0f0;
+}
+
+#yuel {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    
+  }
+  
+  #elay {
+    float: left;
+    position: relative;
+  }
+  
+  #elay a {
+    display: block;
+    font-family: 'Readex Pro';
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  
+    
+        /* Style for the department list */
+        #department-list {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            background-color: #f0f0f0;
+            width: 100%;
+        
+            border-radius: 5px;
+            overflow: hidden;
+            
+            
+            text-align: center;
+        }
+
+        .department-item {
+            margin: 8px;
+            cursor: pointer;
+            
+            width: 100%;
+            
+            
+            
+        }
+
+        .department-item img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .department-item:hover {
+            background-color: #ccc;
+        }
+
+       
+
+        /* Style for department content */
+        .department-content {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            transition: opacity 0.5s;
+            padding-left: 2%;
+            
+        }
+
+        .department-content.show {
+            display: block;
+            opacity: 1;
+            
+        }
+
+        /* Style for department content text */
+        .department-content h2 {
+            color: #333;
+        }
+
+        /* Add a border to the department content for separation */
+        .department-content + .department-content {
+            border-top: 1px solid #ccc;
+        }
+
+        table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    ol{
+        margin-left: 2%;
+    }
+
+    .officials{
+        display: flex;
+        background-color: #f0f0f0;
+        width: 100%;
+        justify-content: center;
+        
+    }
+
+    .mayor{
+        margin: 0 10%;
+        
+        justify-content: center;
+        text-align: center;
+    }
+
+    hr{
+        margin-top: 4%;
+    }
+
+    .council{
+        display: flex;
+        background-color: #f0f0f0;
+        flex-direction: column;
+    }
+
+    .council-names{
+        display: flex;
+        text-align: center;
+        justify-content: space-around;
+        margin-top: 4%;
+    }
+
+    .card-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 0 auto;
+            width: 50%;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease; /* Smooth animation on hover */
+            background-color: white;
+        }
+
+        .card1 {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease; /* Smooth animation on hover */
+            background-color: #ee4d9b;
+            color: white;
+        }
+
+        .card2 {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease; /* Smooth animation on hover */
+            background-color: #502670;
+            color: white;
+
+        }
+
+        .vismis{
+            background-color: #f0f0f0;
+            padding-top: 5%;
+            
+            display: flex;
+            justify-content: center;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        a {
+            text-decoration: none; /* Remove the underline from links */
+            color: inherit; /* Inherit the text color of the card */
+        }
+
+        .card-2 {
+            width: 30%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            
+            margin: 20px;
+            position: relative;
+        }
+
+        .card-2 i {
+            font-size: 72px; /* Increased font size for the icons */
+            color: #007bff;
+            position: absolute;
+            top: -30px; /* Adjust the position to overlap on the card */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .card2-title {
+            font-size: 24px;
+            margin: 15px 0;
+        }
+
+        .main-container{
+            background-color: #f0f0f0;
+        }
+    @media (max-width: 1400px) {
+            #department-list {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .department-item {
+                margin: 10px;
+                cursor: pointer;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <ul id="yuel">
+                <li id="elay"><img src="images/logo2.png" width="300px"></li>
+                <li id="elay"><a href="index.html">HOME</a></li>
+                <li id="elay"><a href="tourist.html">TOURIST SPOTS</a></li>
+                <li id="elay"><a href="history.html">HISTORY</a></li>
+                <li id="elay"><a href="about.html">ABOUT</a></li>
+                <li id="elay"><a href="government.html">GOVERNMENT</a></li>
+
+            </ul>
+        </div>
+    </header>
+
+    
+    <h1 style="background-color: #f0f0f0; text-align: center; font-size: 2.5rem; padding: 1%;">Departments/Offices</h1>
+    <ul id="department-list">
+        <!-- Department 1 -->
+        <li class="department-item" onclick="showContent('department-1')">
+            <img src="images/logo.png" alt="Department 1 Logo">
+            <p>Mayor's Office</p>
+        </li>
+        <!-- Department 2 -->
+        <li class="department-item" onclick="showContent('department-2')">
+            <img src="images/logo.png" alt="Department 2 Logo">
+            <p>Municipal Planning and  Development</p>
+        </li>
+        <li class="department-item" onclick="showContent('department-3')">
+            <img src="images/logo.png" alt="Department 3 Logo">
+            <p>Muicipal Treasurer</p>
+        </li>
+        <li class="department-item" onclick="showContent('department-4')">
+            <img src="images/logo.png" alt="Department 1 Logo">
+            <p>Municipal Budget Office</p>
+        </li>
+        <li class="department-item" onclick="showContent('department-5')">
+            <img src="images/logo.png" alt="Department 1 Logo">
+            <p>Human Resources Management Officer</p>
+        </li>
+        <li class="department-item" onclick="showContent('department-6')">
+            <img src="images/logo.png" alt="Department 1 Logo">
+            <p>Municipal Accountant</p>
+        </li>
+        <li class="department-item" onclick="showContent('department-7')">
+            <img src="images/logo.png" alt="Department 1 Logo">
+            <p>Municipal Engineer</p>
+        </li>
+        <li class="department-item" onclick="showContent('department-8')">
+            <img src="images/logo.png" alt="Department 1 Logo">
+            <p>Municipal Agriculturist</p>
+        </li>
+        <li class="department-item" onclick="showContent('department-9')">
+            <img src="images/logo.png" alt="Department 1 Logo">
+            <p>Municipal Assessor</p>
+        </li>
+        <li class="department-item" onclick="showContent('department-10')">
+            <img src="images/logo.png" alt="Department 1 Logo">
+            <p>Municipal Social Welfare & Development</p>
+        </li>
+        <li class="department-item" onclick="showContent('department-11')">
+            <img src="images/logo.png" alt="Department 1 Logo">
+            <p>Municipal Health Officer</p>
+        </li>
+        <li class="department-item" onclick="showContent('department-12')">
+            <img src="images/logo.png" alt="Department 1 Logo">
+            <p>Municipal Civil Registrar's Office</p>
+        </li>
+        <!-- Add more departments as needed -->
+    </ul>
+
+    <!-- Content for Departments -->
+    <div id="department-1-content" class="department-content">
+        <h2>FUNCTIONS OF THE MAYOR'S OFFICE<br><br></h2>
+        <ol>
+            <li>Exercise general supervision and control over all programs, projects services and activities of the Municipal Government.</li>
+            <li>Enforce all laws and ordinances related to the governance of the municipality and the exercise of its corporate powers.</li>
+            <li>Initiate and maximize the generation of resources and revenues and apply the same to the implementation of development plans, programs, objectives and priorities.</li>
+            <li>Ensure the delivery of basic services and provision of adequate facilities.</li>
+        </ol>
+        <hr>
+    </div>
+
+    <div id="department-2-content" class="department-content">
+        <h2>FUNCTIONS OF THE OFFICE OF THE MUNICIPAL PLANNING AND DEVELOPMENT COORDINATION<br><br></h2>
+        <h3>MPDC/DZAA;</h3>
+        <p>Formulate integrated physio socio-economic development plans and policies for consideration of the local government development council. Prepares comprehensive plans and coordinate all sectoral plans and finally, monitors and evaluate the implementation of different development programs and projects in the local unit. <br><br>
+        <ol>
+            <li>Prepared/Issued Zoning Clearance to applicants for ECC and Land conversion;</li>
+            <li>Prepared/Evaluated/Issued Location Clearance to applicants of building permit;</li>
+            <li>Research statistical data.</li>
+            <li>Submits requested documents to different agencies</li>
+            <li>Prepared different documents needed/requested in the Office of the Mayor</li>
+            <li>Participated/Assisted in the different programs of the Municipal Mayor</li>
+            <li>Prepared request/reports letters to different agencies as requested and as the need arises</li>
+            <li>Prepared supporting documents in the implementation of different projects</li>
+            <li>Attended the meetings/trainings/seminars/workshops of different agencies</li>
+            <li>Monitored/Evaluated the projects implemented by the Mayor;</li>
+            <li>Assisted/Participated in the different activities of the Local Chief Executive</li>
+            <li>Assisted/Participated in the different activity(ies) of private entity(ies) implemented in the locality</li>
+            <li>Attended Committee Hearings of the Sangguniang Bayan of this municipality and Sangguniang Panlalawigan of Pampanga and other Provinces.</li>
+            <li>Prepared/Submitted LGPMS, Annual Report to the DILG</li>
+        </ol>
+        <hr>
+    </div>
+
+    <div id="department-3-content" class="department-content">
+        <h2>FUNCTIONS OF THE MUNICIPAL TREASURER<br><br></h2>
+        <h3>GENERAL FUNCTIONS:</h3>
+        <p>The Municipal Treasurer shall take charge of the treasury office, perform the duties provided for under Book II of the Local Government Code of 1991, and shall: <br><br></p>
+            <ol>
+            <li>Collect Local Revenues</li>
+            <li>Advise the Municipal Mayor, as then case maybe, the sanggunian, and other local government funds.</li>
+            <li>Take custody and exercise proper management of the funds of the Local Government.</li>
+            <li>Take charge of the disbursement of all local government funds and such other funds the custody of which may be entrusted to the municipality.</li>
+            <li>Inspect private commercial and industrial establishments within the jurisdiction of the LGU concerned in relation to the implementation of tax ordnances.</li>
+            <li>Maintain and update then tax information system of the LGU.</li>
+            </ol><br>
+
+            <h3>SPECIFIC FUNCTIONS<br><br></h3>
+            <ol>
+                <li>Certify as to the Availability of Funds.</li>
+                <li>Implement Tax Collection and Enforcement Program.</li>
+                <li>Prepare and Submit Reports.</li>
+                <li>Certify RPT Delinquencies Remaining Uncollected.</li>
+                <li>Examine the Books of Accounts and Pertinent Records of Businessmen.</li>
+                <li>Issue a Certified Statement Covering Actual Income.</li>
+            </ol>
+            <hr>
+    </div>
+
+    <div id="department-4-content" class="department-content">
+        <h2>FUNCTIONS OF THE OFFICE OF THE MUNICIPAL BUDGET OFFICE<br><br></h2>
+        <h3>FUNCTIONAL STATEMENT:</h3>    
+
+            <p>The budget office main function is to exercise general supervision regarding budgetary matters of the local government unit, which include in assisting the Local Chief Executive in the preparation of executive budget, Local School Board Budget, Barangay Budgets, and supplemental budgets, and other related matters.<br><br></p>
+            <h3>OBJECTIVES:<br><br></h3>
+            <ol>
+                <li>To strengthen local planning and budgetary capability and will make more transparent the administration of the fiscal affairs of the local government unit.</li>
+                <li>To guide Local Chief Executive, Sangguniang Bayan Members, and different offices on the new concepts of local governance which are directly related to budget administration.</li>
+                <li>To update all concerns on the new budget policies; and</li>
+                <li>To guide all concerns on the proper procedure form and content of the annual Budget and the application of the new government accounting system in the budget process.</li>
+            </ol>
+            <br>
+            <table>
+                <tr>
+                  <th>Code Ref.</th>
+                  <th>Program / Activity / Project Description</th>
+                  <th>Cost</th>
+                  <th>Output Indicator</th>
+                  <th>Target</th>
+                  <th>Implementation Schedule</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Certify to the availability of allotment of all obligations</td>
+                  <td></td>
+                  <td>Allotment release before the start of the quarter</td>
+                  <td></td>
+                  <td>Jan 2014 - Dec 2014</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Review of existing programs/activities and preparation of budget proposals.</td>
+                  <td></td>
+                  <td>Budget proposals have been submitted</td>
+                  <td></td>
+                  <td>July 2014 - July 15, 2014</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Compilation of all Budget Proposals</td>
+                  <td></td>
+                  <td>Budget expenditures don't exceed budget</td>
+                  <td></td>
+                  <td>July 2014 - July 30, 2014</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Preparation and Submission of executive Budget</td>
+                  <td></td>
+                  <td>Executive Budget</td>
+                  <td></td>
+                  <td>July 2014 - Oct 16, 2014</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Preparation and Submission of Local School Board Budget</td>
+                  <td></td>
+                  <td>Meeting of Local School Board</td>
+                  <td></td>
+                  <td>Nov 2014 - Dec 2014</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Review of Barangay Budgets</td>
+                  <td></td>
+                  <td>Submission of Brgy. Budgets to S.B.</td>
+                  <td></td>
+                  <td>July 2014 - Dec 2014</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Preparation of Supplemental Budgets</td>
+                  <td></td>
+                  <td>Submission to the Provincial level</td>
+                  <td></td>
+                  <td>Jan 2014 - Dec 2014</td>
+                </tr>
+              </table>
+              <hr>
+    </div>
+
+    <div id="department-5-content" class="department-content">
+        <h2>FUNCTION OF THE HUMAN RESOURCES MANAGEMENT OFFICER<br><br></h2>
+        <ol>
+            <li>Prepare plantilla of casual appointment papers</li>
+            <li>Prepares appointment papers and supporting documents of permanent, co-terminus to be arrested by the Civil Service Commission – Field Office</li>
+            <li>Prepares service records of municipal employees</li>
+            <li>Updates leave records of municipal employees</li>
+            <li>Prepares memos, letters, certification</li>
+            <li>Prints and verifies attendance of municipal employees</li>
+            <li>Updates and computes leave records</li>
+            <li>Prepares and verifies actual working days performance of department heads for RATA purposes</li>
+            <li>Provides technical assistance to employees</li>
+            <li>Prepares Plantilla of Personnel Schedule</li>
+            <li>Provides lists/notice of step increment</li>
+            <li>Prepares certificate of loyalty bonus</li>
+            <li>Submits list of employees who are entitled to avail the regular MLC</li>
+        </ol>
+        <hr>
+    </div>
+
+    <div id="department-6-content" class="department-content">
+        <h2>FUNCTIONS OF THE OFFICE OF THE MUNICIPAL ACCOUNTANT<br><br></h2>
+        <ol>
+            <li>Vouchers</li>
+            <li>BIR Remittances</li>
+            <li>Journals</li>
+            <li>Journal Entry Vouchers</li>
+            <li>Bank Reconciliation</li>
+            <li>Financial Statements</li>
+        </ol>
+        <hr>
+    </div>
+
+    <div id="department-7-content" class="department-content">
+        <h2>FUNCTIONS OF THE OFFICE OF THE MUNICIPAL ENGINEER<br><br></h2>
+        <ol>
+            <li>Visibility Study</li>
+            <li>Project Implementation</li>
+            <li>Site Inspection</li>
+            <li>Planning/Estimates</li>
+            <li>Program of Works</li>
+            <li>Building Permits</li>
+            <li>Electrical Layout/Permits</li>
+            <li>Boring Permits</li>
+        </ol>
+        <hr>
+    </div>
+
+    <div id="department-8-content" class="department-content">
+        <h2>FUNCTIONS OF THE OFFICE OF THE MUNICIPAL AGRICULTURIST<br><br></h2>
+        <p>To facilitate agricultural production through the provision of technical support to farmers and community based initiatives, and the creation of a conducive environment for increased investment in agriculture. In an effort to achieve these ideas, the department will embarked in a holistic development approach by participating in the formulation of Integrated Development Plans and other planning initiatives of the local government units.<br><br></p>
+        <h3>Activities:<br><br></h3>
+        <ol>
+            <li>Farmers Dialogue</li>
+            <li>Conduct farm demo</li>
+            <li>Farm/home visit and monitoring</li>
+            <li>Farm inputs distribution</li>
+            <li>Fingerlings distribution</li>
+            <li>Massive vaccination
+                <ul>
+                    <li>Anti Rabies</li>
+                    <li>Anti Hemorrhagic Septicemia</li>
+                </ul>
+            </li>
+            <li>Massive livestock deworming and vitamin injection</li>
+            <li>Municipal Nursery maintenance</li>
+            <li>Rat baits preparation</li>
+        </ol>
+        <hr>
+    </div>
+
+    <div id="department-9-content" class="department-content">
+        <h2>FUNCTIONS OF THE OFFICE OF THE MUNICIPAL ASSESSOR<br><br></h2>
+        <ol>
+            <li>Ensure that all laws and policies governing the appraisal and assessment of real properties for taxation purposes are properly executed;</li>
+            <li>Initiate, review, and recommend changes in policies and objectives, plans and programs, techniques, procedures, and practices in the valuation and assessment of real properties for taxation purposes;</li>
+            <li>Establish a systematic method of real property assessment;</li>
+            <li>Install and maintain real property identification and accounting system;</li>
+            <li>Prepare, install, and maintain a system of tax ,mapping, showing graphically all property subject to assessment and gather all data concerning the same;</li>
+            <li>Conduct frequent physical survey to verify and determine as to whether or not all real properties within the province are property listed in the assessment roll;</li>
+            <li>Exercise the function of appraisal and assessment primarily for taxation purposes of all real properties in the LGU concerned;</li>
+            <li>Prepare a schedule of fair market values for the different classes of real properties, in a accordance with Title Two, Book II of the Code;</li>
+            <li>Issue, upon request of any interested party, certified copies off assessment records of real property and all other records relative to its assessment, upon payment of a service charge or fee to the treasure;    </li>
+            <li>Submit every semester a report of all assessment , as well as cancellations and modifications, to the local chief executive and the sanggunian concerned;</li>
+            <li>In the case assessor of a component city or municipality, attend personally or through an authorized representative, all sessions on the local board of assessment appeals whenever his assessment is the subject of the appeal, and present or submit any information or record in his possession as many be required by the board;</li>
+        </ol>
+        <hr>
+    </div>
+
+    <div id="department-10-content" class="department-content">
+        <h2>FUNCTIONS OF THE OFFICE OF THE MUNICIPAL SOCIAL WELFARE & DEVELOPMENT<br><br></h2>
+        <ol>
+            <li>Executes and implements policies and programs established by Program Bureaus and render administrative decisions on matter within the limits of delegated authority.</li>
+            <li>Maintains cooperative and harmonious relationship with other entities and agencies, private and public in promoting social welfare development</li>
+            <li>Supervises day care workers and administrative staff in the performance of their duties, and assigned workloads and administrative staff in the performance of their duties, and assigned workloads to ensure equitable and proper distribution of personnel.</li>
+            <li>Conducts regular supervisory conference (individual group as well as community discussions) to staff for a better program interpretations.</li>
+            <li>Supervise reporting management of office to most target goals.</li>
+            <li>Responsible to carry out welfare programs within the coverage areas.</li>
+            <li>Focal person of ECCD program implementation.</li>
+            <li>Focal person on disaster and rehabilitation phase of the MDCC</li>
+            <li>Assessment on abused and battered women.</li>
+            <li>Assists on the placement of socially displaced persons.</li>
+            <li>Training and rehabilitation programs with disabilities.</li>
+            <li>COMMUNITY ORGANIZER: Disadvantaged, women group, senior citizens, out of school youth group, parent committee association of every day care center</li>
+            <li>Protect the legal needs of the children n conflict with the law (RA 9344)</li>
+            <li>Makes an interview and prepares Social Case Study Reports and General Intake Sheet.</li>
+            <li>Assists AICS clients</li>
+            <li>Issue senior citizens and PWD ID’s.</li>
+            <li>Assessment on Solo parent applicant</li>
+            <li>Assess the walk-in clients and do clerical job in the office.</li>
+        </ol><br><br>
+        <h3>DAY CARE WORKERS:<br><br></h3>
+        <ol>
+            <li>Serves the 3 to 5 years old less privilege pre-school children of the barangays.</li>
+            <li>Member of the Barangay Council for the Protection of Children</li>
+            <li>Member of the Barangay Disaster Coordinating Council</li>
+            <li>Member of the Barangay Nutrition Council</li>
+        </ol>
+        <hr>
+    </div>
+
+    <div id="department-11-content" class="department-content">
+        <h2>FUNCTIONS OF THE OFFICE OF THE MUNICIPAL HEALTH OFFICER<br><br></h2>
+        <h3>RURAL HEALTH UNIT</h3>
+        <p>The Rural Health Unit is mandated to implement health programs and projects in the locality. It provides medical, dental, laboratory, maternal and child health care services.<br><br>
+
+            It is also tasked to promote environmental sanitation and to enforce health and sanitation standards.<br>
+            
+            Services offered are as follows:<br><br></p>
+            <ul>
+                <li>Medical Consultations at the Rural Health Units or BHS</li>
+                <li>Minor Surgical Consultation</li>
+                <li>Issuance of Sanitary Permit and Health Card</li>
+                <li>Issuance of Health/Medical Certificate</li>
+                <li>Issuance of Permit to transfer Food Products</li>
+                <li>Issuance of permit to Uxhume Human Remains & Transfer Permit of Cadaver</li>
+                <li>Preparation of Death Certificate</li>
+                <li>Immunization Services</li>
+                <li>Maternal and New Born Care Services</li>
+                <li>Family Planning Services</li>
+                <li>Dental Services</li>
+                <li>Anti-Tuberculosis Drugs Provision</li>
+                <li>Provide Leprosy Drugs Provision</li>
+                <li>Laboratory Services</li>
+                <li>Ambulatory Services</li>
+                <li>Monitor Nutritional Status of Children</li>
+                <li>Disease Surveillance Unit during Disasters and Outbreaks</li>
+            </ul>
+            <hr>
+    </div>
+
+    <div id="department-12-content" class="department-content">
+        <h2>FUNCTION OF THE MUNICIPAL CIVIL REGISTRAR’S OFFICE<br><br></h2>
+        <ol>
+            <li>Responsible for the Civil Registration programs, pursuant to the Civil Registry Law, Civil Code, and other pertinent laws, rules and regulations issued to implement them.</li>
+            <li>Develops plans and strategies on civil registry programs and projects.</li>
+            <li>Accepts, transcribes all registrable documents and judicial decrees affecting civil status of persons.</li>
+            <li>Files, keeps, and preserves the civil registry books required by law. Issues certified transcripts or copies of registered documents.</li>
+            <li>Transmits to the Office of the civil Registrar General within the prescribed period, duplicate copies of registered documents required by law.</li>
+            <li>Receives applications for the issuance of marriage license.</li>
+            <li>Coordinates with NSO and other agencies in conducting educational campaign for vital registration and assists in the preparation of demographic and other statistics of agencies concerned.</li>
+            <li>Exercises other power and performs duties, functions as may be prescribed by law.</li>
+        </ol>
+        <hr>
+    </div>
+
+    
+    
+    <h1 style="background-color: #f0f0f0; text-align: center; font-size: 2.5rem; padding: 1%; padding-top: 2%; padding-bottom: 2%;">Officials</h1>
+    <div class="officials">
+        
+        <div class="mayor">
+        <img src="images/mayor.png">
+        <h2>HON. ARTHUR L. SALALILA</h2>
+        <p>MAYOR</p>
+        </div>
+        <div class="mayor">
+        <img src="images/mayor2.png">
+        <h2>HON.MERCEDITA B. CARREON</h2>
+        <p>VICE MAYOR</p>
+        </div>
+        </div>
+
+        <div class="council">
+        <div class="council-names">
+            <div>
+            <h2>Hon. Reynan S. Calo</h2>
+            <p>Councilor</p>
+            </div>
+
+            <div>
+            <h2>Hon. Arthur M. Salalila Jr.</h2>
+            <p>Councilor</p>
+            </div>
+            
+            <div>
+            <h2>Hon. Kimberly A. Cosme</h2>
+            <p>Councilor</p>
+            </div>
+        </div>
+
+        <div class="council-names">
+            <div>
+            <h2>Hon. Rico H. Sta. Cruz</h2>
+            <p>Councilor</p>
+            </div>
+            <div>
+            <h2>Hon. Alvin P. Martin</h2>
+            <p>Councilor</p>
+            </div>
+        </div>
+
+        <div class="council-names">
+            <div>
+            <h2>Hon. Alexander C. Cruz</h2>
+            <p>Councilor</p>
+            </div>
+
+            <div>
+            <h2>Hon. Rogelio S. Galang</h2>
+            <p>Councilor</p>
+            </div>
+            <div>
+            <h2>Hon. Renato Q. Gopez</h2>
+            <p>Councilor</p>
+            </div>
+        </div>
+        <hr>
+        </div>
+
+        <div class="vismis">
+            <div class="card-2">
+                <i class="fas fa-eye"></i>
+                <h2 class="card2-title">Vision</h2>
+                <p>We envision Santa Rita as the Sarswela Capital in the Region, with God-loving,
+                    productive and contented Riteñans, having a sense of pride and involvement for its
+                    unique culture and heritage, living in a safe, balanced and healthy environment, with a
+                    competitive and progressive economy, governed by a dynamic and competent
+                    leadership committed to the principles of good governance. </p>
+            </div>
+    
+            <div class="card-2">
+                <i class="fas fa-bullseye"></i>
+                <h2 class="card2-title">Mission</h2>
+                <p>To pursue optimum growth through an effective governance propelled by empowered
+                    multi-sectoral participation and spiritual commitment. </p>
+            </div>
+        
+        </div>
+
+        
+        <h1 style="background-color: #f0f0f0; text-align: center; font-size: 2.5rem; padding: 1%; padding-top: 2%; padding-bottom: 2%;">Executive Orders</h1>
+         <div class="main-container">
+            <div class="card-container">
+                <a href="your-link-here" class="card">
+                    <h3>Executive Orders 2021</h3>
+                    <p>These are the executive orders issued in the year 2021. This content provides information about their impact and significance.</p>
+                </a>
+        
+                <a href="your-link-here" class="card">
+                    <h3>Executive Orders 2012</h3>
+                    <p>Here, you'll find details about the executive orders from the year 2012 and their implications on various matters.</p>
+                </a>
+        
+                <a href="your-link-here" class="card">
+                    <h3>Executive Orders 2011</h3>
+                    <p>Discover the executive orders enacted in 2011 and their influence on policies and regulations during that year.</p>
+                </a>
+        
+                <a href="your-link-here" class="card">
+                    <h3>Executive Orders 2010</h3>
+                    <p>This section covers the executive orders issued in 2010, offering insights into their impact on government actions and decisions.</p>
+                </a>
+            </div>
+            <hr>
+        </div>
+
+        
+
+
+    
+    <!-- Add more department content as needed -->
+
+    <script>
+        function showContent(departmentId) {
+            // Hide all department content
+            const departmentContents = document.querySelectorAll('.department-content');
+            departmentContents.forEach(content => {
+                content.classList.remove('show');
+            });
+
+            // Show the content for the clicked department
+            const departmentContent = document.getElementById(departmentId + '-content');
+            if (departmentContent) {
+                departmentContent.classList.add('show');
+            }
+        }
+    </script>
+</body>
+</html>

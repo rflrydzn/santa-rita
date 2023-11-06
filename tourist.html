@@ -4,12 +4,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css" type="text/css">
         <link rel="stylesheet" href="css/tourist.css" type="text/css">
+        <link rel="stylesheet" href="css/dropdown.css" type="text/css">
+        <link rel="stylesheet" href="accessibility.css">
+        
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Readex%20Pro">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Readex%20Pro">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/5c825ad570.js" crossorigin="anonymous"></script>
         
         <style>
             body{
                 background-color: #f0f0f0;
+                background-image: url(world.png);
+                background-position: center;
+                
+                
             }
             .attraction-card {
                 
@@ -59,8 +68,19 @@
     margin: 0 auto;
     max-width: 70%;
     
-    
-    
+     
+}
+
+.attraction-title{
+    font-size: 1.5rem;
+    font-family: Helvetica;
+    font-weight: 700;
+}
+
+.attraction-description{
+    font-size: 1rem;
+    font-family: Helvetica;
+    font-weight: 600;
 }
 
 @media (max-width: 768px) {
@@ -105,28 +125,51 @@
     cursor: pointer;
 }
 }}
+
+.h1h1{
+    font-family: Helvetica; font-weight: 800; color: #4f4f4f; text-align: center; font-size: 30px;
+    
+}
+
+
         </style>
     </head>
 
     <body>
+        <div class="custom-dropdown">
+            <button class="dropdown-label">Accessibility Options</button>
+            <div class="custom-options">
+                <button class="option-button" onclick="toggleHighContrast()">High Contrast Mode</button>
+                <button class="option-button" onclick="toggleTextSize('increase')">Increase Text</button>
+                <button class="option-button" onclick="toggleTextSize('decrease')">Decrease Text</button>
+                <button class="option-button" onclick="resetAccessibilitySettings()">Reset All</button>
+        </div>
+            </div>
+
         <header>
             <div class="nav">
                 <ul>
-                    <li><img src="images/logo2.png" width="300px"></li>
+                    <li>
+                        <img id="logo" src="images/logo2.png" width="300px"> <!-- Use a default logo image -->
+                        <img id="high-contrast-logo" src="images/logo3.png" width="300px" style="display: none"> <!-- Use the high contrast logo image, initially hidden -->
+                    </li>
                     <li><a class="#" href="index.html">HOME</a></li>
                     <li><a href="tourist.html">TOURIST SPOTS</a></li>
                     <li><a href="history.html">HISTORY</a></li>
                     <li><a href="#">ABOUT</a></li>
+                    <li><a href="government.html">GOVERNMENT</a></li>
                 </ul>
             </div>
         </header>
         <br>
-    <h1 style="font-family: Helvetica; font-weight: 800; color: #4f4f4f; text-align: center; font-size: 50px;"><img src="images/tur.png" style="width: 60px;">Tourist Spots</h1>
+    <div class="h1h1">
+    <h1><img src="images/tur.png" style="width: 60px;" >Tourist Spots</h1>
+    </div>
     <div class="container">
         <div class="attraction-card">
             <div class="attraction-content">
-                <h1 class="attraction-title">Attraction 1</h1>
-                <p class="attraction-description">Description of Attraction 1.</p>
+                <h1 class="attraction-title">Sta. Rita de Cascia Parish Church</h1>
+                <p class="attraction-description"><i class="fa-solid fa-location-dot" style="font-size: 17px;"></i>&nbsp Dalan Betis Rd, Santa Rita, Pampanga</p>
             </div>
         </div>
     
@@ -172,3 +215,48 @@
             </div>
         </div>
     </div>
+
+    <script src="js/dropdown.js"></script>
+         <script>
+                let isHighContrast = false;
+
+function toggleHighContrast() {
+    const body = document.body;
+    const logo = document.getElementById('logo');
+    isHighContrast = !isHighContrast; // Toggle the mode
+    if (isHighContrast) {
+        body.classList.add('high-contrast'); // Set to high contrast mode
+        logo.src = "images/logo3.png"; // Change logo for high contrast mode
+    } else {
+        body.classList.remove('high-contrast'); // Revert to normal mode
+        logo.src = "images/logo2.png"; // Change logo back to normal mode
+    }
+}
+
+function toggleTextSize(option) {
+    const elementsToToggle = document.querySelectorAll('.bg-container, .church, .nav, .intro, .h1id');
+
+    elementsToToggle.forEach(element => {
+        if (option === 'increase') {
+            element.classList.add('increase-text');
+            element.classList.remove('decrease-text');
+        } else if (option === 'decrease') {
+            element.classList.remove('increase-text');
+            element.classList.add('decrease-text');
+        }
+    });
+}
+
+function resetAccessibilitySettings() {
+    const elementsToReset = document.querySelectorAll('.bg-container, .church, .nav, .intro, .h1id');
+    const body = document.body;
+
+    elementsToReset.forEach(element => {
+        element.classList.remove('increase-text');
+        element.classList.remove('decrease-text');
+    });
+
+    body.classList.remove('high-contrast');
+    document.getElementById('logo').src = "images/logo2.png"; // Reset logo to normal mode
+}
+        </script>

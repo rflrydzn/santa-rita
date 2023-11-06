@@ -49,10 +49,6 @@
                     font-size: 3.2rem;
                 }
             }
-
-            .high-contrast .intro{
-                background-image: url(Home11.png);
-            }
         </style>
     </head>
 
@@ -253,7 +249,7 @@ function toggleHighContrast() {
 }
 
 function toggleTextSize(option) {
-    const elementsToToggle = document.querySelectorAll('.bg-container, .church, .nav, .intro');
+    const elementsToToggle = document.querySelectorAll('.bg-container, .church, .nav');
 
     elementsToToggle.forEach(element => {
         if (option === 'increase') {
@@ -267,7 +263,7 @@ function toggleTextSize(option) {
 }
 
 function resetAccessibilitySettings() {
-    const elementsToReset = document.querySelectorAll('.bg-container, .church, .nav, .intro');
+    const elementsToReset = document.querySelectorAll('.bg-container, .church, .nav');
     const body = document.body;
 
     elementsToReset.forEach(element => {

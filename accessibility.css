@@ -1,0 +1,233 @@
+.custom-dropdown {
+    position: fixed;
+    display: inline-block;
+    top: 1%;
+    right: 2%;
+
+}
+
+/* Style for the label button */
+.dropdown-label {
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px; 
+}
+
+/* Style for the options */
+.custom-options {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.option-button {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+}
+
+.option-button:hover {
+    background-color: #2980b9;
+}
+
+/* Show options when hovering over the dropdown container */
+.custom-dropdown:hover .custom-options {
+    display: block;
+}
+
+/* Change the background color, text color, and link color when high contrast mode is active */
+.high-contrast {
+    background-color: black;
+    color: white;
+}
+
+/* Change the color of all anchor links */
+.high-contrast a {
+    color: yellow;
+}
+
+/* Change the color of all paragraphs */
+.high-contrast p {
+    color: white;
+    background-color: black;
+}
+
+.high-contrast .nav {
+    background-color: #000000; /* Dark background */
+}
+
+.high-contrast .nav ul {
+    background-color: transparent;
+}
+
+.high-contrast .nav li {
+    padding: 10px;
+}
+
+.high-contrast #urban {
+    background-color: black;
+    color: yellow;
+}
+
+.high-contrast .discover-container a{
+    background-color: black;
+}
+
+.high-contrast .containerr{
+    background-color: black;
+}
+
+.high-contrast .containerr{
+    background-color: black;
+}
+
+.high-contrast .container{
+    background-color: black;
+}
+
+.high-contrast #tourismh1{
+    background-color: black;
+}
+
+.high-contrast .main-video-container{
+    background-color: black;
+}
+
+.high-contrast .main-video-container .main-vid-title{
+    background-color: black;
+    color: white;
+}
+
+.high-contrast .video-list-container{
+    background-color: black;
+    color: white;
+}
+
+.high-contrast .video-list-container .list{
+    background-color: black;
+    color: white;
+}
+
+.high-contrast .video-list-container .list-active{
+    background-color: black;
+}
+
+.high-contrast .list .list-title{
+    background-color: black;
+    color: white;
+}
+
+.high-contrast .video-list-container .list .list-title{
+    color: white;
+}
+
+.high-contrast .church{
+    background-color: black;
+}
+
+.high-contrast .text-card{
+    background-color: black;
+}
+
+.high-contrast .text-card h1{
+    background-color: black;
+    color: white;
+}
+
+.high-contrast .text-card a{
+    background-color: black;
+}
+
+.high-contrast .text-card a{
+    background-color: black;
+}
+
+.high-contrast .h1h1 h1 {
+    color: white;
+}
+
+
+
+.text-size .bg-container .discover-container{
+    font-size: 220%;
+}
+
+.bg-container.increase-text p {
+    font-size: 200%;
+}
+
+.bg-container.increase-text a {
+    font-size: 220%;
+}
+
+/* Reset text size within .bg-container */
+.bg-container.decrease-text p {
+    font-size: 100%;
+}
+
+.bg-container.decrease-text a {
+    font-size: 100%;
+}
+
+
+ /* Increase text size within .church section */
+
+ .church.increase-text p,
+ .church.increase-text .button {
+     font-size: 150%;
+ }
+
+ .church.increase-text h1{
+    font-size: 200%;
+ }
+
+ /* Reset text size within .church section */
+ .church.decrease-text h1,
+ .church.decrease-text p,
+ .church.decrease-text .button {
+     font-size: 100%;
+ }
+
+ .nav.increase-text a {
+    font-size: 150%;
+}
+
+/* Reset font size in the navigation bar */
+.nav.decrease-text a {
+    font-size: 80%;
+}
+
+
+        .intro.increase-text .introtext h1 {
+            font-size: 245%;
+        }
+
+        /* Reset font size for .introtext in .intro section */
+       
+        .intro.decrease-text .introtext h1 {
+            font-size: 150%;
+        }
+
+        .intro.increase-text .introtext h5 {
+            font-size: 130%;
+        }
+
+        /* Reset font size for .introtext in .intro section */
+       
+        .intro.decrease-text .introtext h5 {
+            font-size: 50%;
+        }
+
+        

@@ -17,7 +17,7 @@
             color: #fff;
             cursor: pointer;
             border: none;
-            border-radius: 4px;
+            border-radius: 4px.
         }
 
         /* Style for the options */
@@ -66,15 +66,23 @@
         .high-contrast p {
             color: white;
         }
-
-        /* Increase text size within .bg-container */
-        .bg-container.increase-text p {
-            font-size: 120%;
+        
+        /* Change the style of the navigation bar in high contrast mode */
+        .high-contrast .nav {
+            background-color: #333; /* Dark background */
         }
 
-        /* Reset text size within .bg-container */
-        .bg-container.decrease-text p {
-            font-size: 100%;
+        .high-contrast .nav ul {
+            background-color: transparent;
+        }
+
+        .high-contrast .nav li {
+            padding: 10px;
+        }
+
+        .high-contrast .nav a {
+            color: yellow;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -83,8 +91,8 @@
         <button class="dropdown-label">Accessibility Options</button>
         <div class="custom-options">
             <button class="option-button" onclick="toggleHighContrast()">High Contrast Mode</button>
-            <button class="option-button" onclick="toggleTextSize('increase')">Increase Text</button>
-            <button class="option-button" onclick="toggleTextSize('decrease')">Decrease Text</button>
+            <button class="option-button" onclick="increaseTextSize()">Increase Text</button>
+            <button class="option-button" onclick="decreaseTextSize()">Decrease Text</button>
         </div>
     </div>
 
@@ -103,21 +111,15 @@
         </div>
     </header>
 
-    <div class="bg-container">
-        <div class="discover-container">    
-            <br>
-
-            <div class="left">
-                <img src="4.png">
-            </div>
-
-            <div class="right">
-                <img src="images/one1.png" id="right1">
-                <p id="p1">Santa Rita, Pampanga, is a captivating destination offering a blend of history, nature, and culture. Its historic Santa Rita de Cascia Parish Church and picturesque Mount Arayat stand out as must-see attractions. Enjoy vibrant festivals, local markets, and delicious cuisine, making it an enriching and diverse destination for all travelers.</p>       
-                <a href="#">CHECK ATTRACTIONS</a>
-            </div>
-        </div>
+    <div class="content">
+        <h2>Content Area</h2>
+        <p>This is the content area of the page.</p>
+        <a href="#">Sample Link 1</a>
+        <a href="#">Sample Link 2</a>
+        <a href="#">Sample Link 3</a>
     </div>
+
+    <p>This is a sample paragraph outside the content area.</p>
 
     <script>
         // JavaScript to toggle high contrast mode
@@ -125,27 +127,26 @@
 
         function toggleHighContrast() {
             const body = document.body;
-            isHighContrast = !isHighContrast; // Toggle the mode
             if (isHighContrast) {
+                body.classList.remove('high-contrast'); // Revert to normal mode
+                document.getElementById('logo').style.display = 'block'; // Show the default logo
+                document.getElementById('high-contrast-logo').style.display = 'none'; // Hide the high contrast logo
+            } else {
                 body.classList.add('high-contrast'); // Set to high contrast mode
                 document.getElementById('logo').style.display = 'none'; // Hide the default logo
                 document.getElementById('high-contrast-logo').style.display = 'block'; // Show the high contrast logo
-            } else {
-                body.classList.remove('high-contrast'); // Revert to normal mode
-                document.getElementById('logo').style display = 'block'; // Show the default logo
-                document.getElementById('high-contrast-logo').style.display = 'none'; // Hide the high contrast logo
             }
+            isHighContrast = !isHighContrast; // Toggle the mode
         }
 
-        function toggleTextSize(option) {
-            const body = document.body;
-            if (option === 'increase') {
-                body.classList.add('increase-text');
-                body.classList.remove('decrease-text');
-            } else if (option === 'decrease') {
-                body.classList.remove('increase-text');
-                body.classList.add('decrease-text');
-            }
+        // JavaScript to increase text size
+        function increaseTextSize() {
+            document.body.style.fontSize = '120%';
+        }
+
+        // JavaScript to decrease text size
+        function decreaseTextSize() {
+            document.body.style.fontSize = '80%';
         }
     </script>
 </body>
