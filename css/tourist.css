@@ -6,13 +6,19 @@
     margin: 10px;
     display: inline-block;
     position: relative;
-    background-image: url(church1.png);
     border: 1px solid #ccc;
     border-radius: 2rem;
+    overflow: hidden; /* Ensure the image doesn't exceed the card boundaries */
     transition: transform 0.5s ease-in-out;
     cursor: pointer;
 }
 
+.attraction-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 /* Styling for the content inside the card */
 .attraction-content {
     position: absolute;
