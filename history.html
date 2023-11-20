@@ -4,8 +4,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css" type="text/css">
         <link rel="stylesheet" href="css/tourist.css" type="text/css">
+        <link rel="stylesheet" href="css/dropdown.css" type="text/css">
+        <link rel="stylesheet" href="accessibility.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Readex%20Pro">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Readex%20Pro">
+        <script src="https://kit.fontawesome.com/5c825ad570.js" crossorigin="anonymous"></script>
+
         
         <style>
             body{
@@ -73,19 +76,38 @@
     </head>
 
     <body>
+        <!---NAV BAR--->
+        <div class="custom-dropdown">
+            <button class="dropdown-label"><i class="fa-brands fa-accessible-icon"></i></button>
+            <div class="custom-options">
+                <button class="option-button" onclick="toggleHighContrast()"><i class="fa-solid fa-eye-low-vision"></i></button>
+                <button class="option-button" onclick="toggleTextSize('increase')"><i class="fa-solid fa-font"></i></button>
+                <button class="option-button" onclick="toggleTextSize('decrease')"><i class="fa-solid fa-font fa-2xs"></i></button>
+                <button class="option-button" onclick="scrollToBottom()"><i class="fa-solid fa-angles-down"></i></button>
+                <button class="option-button" onclick="resetAccessibilitySettings()"><i class="fa-solid fa-rotate"></i></button>
+            </div>
+        </div>
+            
         <header>
             <div class="nav">
-                <ul>
-                    <li><img src="images/logo2.png" width="300px"></li>
-                    <li><a class="index.html" href="index.html">HOME</a></li>
-                    <li><a href="tourist.html">TOURIST SPOTS</a></li>
-                    <li><a href="history.html">HISTORY</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="government.html">GOVERNMENT</a></li>
+                <div class="logo-container">
+                    <a href="index.html">
+                    <img id="logo" src="images/logo2.png" width="300px">
+                    <img id="high-contrast-logo" src="images/logo3.png" width="300px" style="display: none">
+                    </a>
+                </div>
+                
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="tourist.html">EXPLORE</a></li>
+                <li><a href="history.html">HISTORY</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="government.html">GOVERNMENT</a></li>
+            </ul>
 
-                </ul>
             </div>
         </header>
+        <!---END OF NAV BAR--->
         <br>
     
 <div class="paper-container">
@@ -102,3 +124,61 @@
 
     </div>
 </div>
+
+<button class="scroll-to-top" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="js/dropdown.js"></script>
+         <script>
+                let isHighContrast = false;
+
+function toggleHighContrast() {
+    const body = document.body;
+    const logo = document.getElementById('logo');
+    isHighContrast = !isHighContrast; // Toggle the mode
+    if (isHighContrast) {
+        body.classList.add('high-contrast'); // Set to high contrast mode
+        logo.src = "images/logo3.png"; // Change logo for high contrast mode
+    } else {
+        body.classList.remove('high-contrast'); // Revert to normal mode
+        logo.src = "images/logo2.png"; // Change logo back to normal mode
+    }
+}
+
+function toggleTextSize(option) {
+    const elementsToToggle = document.querySelectorAll('.bg-container, .church, .nav, .intro, .h1id, .h1h1, .attraction-card, .paper-container, .history');
+
+    elementsToToggle.forEach(element => {
+        if (option === 'increase') {
+            element.classList.add('increase-text');
+            element.classList.remove('decrease-text');
+        } else if (option === 'decrease') {
+            element.classList.remove('increase-text');
+            element.classList.add('decrease-text');
+        }
+    });
+}
+
+function resetAccessibilitySettings() {
+    const elementsToReset = document.querySelectorAll('.bg-container, .church, .nav, .intro, .h1id, .h1h1, .attraction-card, .paper-container, .history');
+    const body = document.body;
+
+    elementsToReset.forEach(element => {
+        element.classList.remove('increase-text');
+        element.classList.remove('decrease-text');
+    });
+
+    body.classList.remove('high-contrast');
+    document.getElementById('logo').src = "images/logo2.png"; // Reset logo to normal mode
+}
+
+function scrollToBottom() {
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+
+        function scrollToTop() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        }
+        </script>

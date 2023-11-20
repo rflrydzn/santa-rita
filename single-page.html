@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="css/playlist.css" type="text/css">
+        <link rel="stylesheet" href="css/dropdown.css" type="text/css">
+        <link rel="stylesheet" href="accessibility.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Readex%20Pro">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <script src="https://kit.fontawesome.com/5c825ad570.js" crossorigin="anonymous"></script>
+    <title>Santa Rita de Cascia Parish Tourism</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('church1.png') center/cover no-repeat;
+            color: #fff;
+            background-attachment: fixed;
+        }
+        .header1 {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            text-align: center;
+        }
+        .header1 h1 {
+            opacity: 0.8;
+            margin: 0;
+            padding: 10%;
+            font-size: 5rem;
+        }
+        section {
+            background-color: #fff; /* Set the background color to white */
+            padding: 40px 20px;
+            text-align: center;
+        }
+        #map-container {
+            height: 450px; /* Adjust the height as needed */
+            width: 100%;
+        }
+        #about img {
+            max-width: 100%;
+            height: auto;
+            border: 8px solid #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #34495e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50%;
+        }
+
+        #about p{
+            color: black;
+            font-family: 'Montserrat';
+            width: 40%;
+            font-size: 1.2rem;
+            
+        }
+
+        
+        @media (min-width: 768px) {
+            #about {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                text-align: left;
+            }
+            #about p {
+                max-width: 60%;
+            }
+            #about img {
+                max-width: 30%;
+                margin-top: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #about p {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!---NAV BAR--->
+    <div class="custom-dropdown">
+        <button class="dropdown-label"><i class="fa-brands fa-accessible-icon"></i></button>
+        <div class="custom-options">
+            <button class="option-button" onclick="toggleHighContrast()"><i class="fa-solid fa-eye-low-vision"></i></button>
+            <button class="option-button" onclick="toggleTextSize('increase')"><i class="fa-solid fa-font"></i></button>
+            <button class="option-button" onclick="toggleTextSize('decrease')"><i class="fa-solid fa-font fa-2xs"></i></button>
+            <button class="option-button" onclick="scrollToBottom()"><i class="fa-solid fa-angles-down"></i></button>
+            <button class="option-button" onclick="resetAccessibilitySettings()"><i class="fa-solid fa-rotate"></i></button>
+        </div>
+    </div>
+        
+    <header>
+        <div class="nav">
+            <div class="logo-container">
+                <a href="index.html">
+                <img id="logo" src="images/logo2.png" width="300px">
+                <img id="high-contrast-logo" src="images/logo3.png" width="300px" style="display: none">
+                </a>
+            </div>
+            
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="tourist.html">EXPLORE</a></li>
+            <li><a href="history.html">HISTORY</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="government.html">GOVERNMENT</a></li>
+        </ul>
+
+        </div>
+    </header>
+    <div class="header1">
+        <h1>Santa Rita de Cascia Parish</h1>
+        <p>Discover the beauty and history of Santa Rita de Cascia Parish</p>
+    </div>
+
+    <section id="about">
+        <p>Welcome to Santa Rita de Cascia Parish, a sanctuary of spirituality and cultural heritage. Nestled in the heart of Pampanga, Philippines, our parish is more than just a religious institution; it's a testament to centuries of faith, tradition, and community.
+        
+        Our iconic church stands as a beacon of history, its architecture telling the tales of generations that have gathered within its walls. The stunning blend of Spanish and Filipino influences makes it a unique and cherished landmark in the region.
+        
+        As you step into the hallowed grounds, feel the tranquility that permeates the air. Attend our spiritual events, participate in community activities, and witness the unwavering spirit of our parishioners.</p>
+
+        <img src="images/parish.jpg" alt="Santa Rita de Cascia Parish Church">
+    </section>
+
+    <section id="map">
+        <!-- Replace the existing map container with the provided iframe -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3853.881583317696!2d120.6145018111525!3d14.999277267130376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f5feff0c7475%3A0x20f2424c3d87c04c!2sSanta%20Rita%20de%20Cascia%20Church%2C%20Dalan%20Betis%20Rd%2C%20Santa%20Rita%2C%20Pampanga!5e0!3m2!1sen!2sph!4v1700486411974!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    
+
+    
+
+    
+
+   
+
+
+</body>
+</html>

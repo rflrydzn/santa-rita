@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="css/dropdown.css" type="text/css">
         <link rel="stylesheet" href="accessibility.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Readex%20Pro">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <script src="https://kit.fontawesome.com/5c825ad570.js" crossorigin="anonymous"></script>
        
         <style>
             .bg-container{
@@ -57,36 +59,39 @@
     </head>
 
     <body>
+        <!---NAV BAR--->
         <div class="custom-dropdown">
-            <button class="dropdown-label">Accessibility Options</button>
+            <button class="dropdown-label"><i class="fa-brands fa-accessible-icon"></i></button>
             <div class="custom-options">
-                <button class="option-button" onclick="toggleHighContrast()">High Contrast Mode</button>
-                <button class="option-button" onclick="toggleTextSize('increase')">Increase Text</button>
-                <button class="option-button" onclick="toggleTextSize('decrease')">Decrease Text</button>
-                <button class="option-button" onclick="resetAccessibilitySettings()">Reset All</button>
-        </div>
+                <button class="option-button" onclick="toggleHighContrast()"><i class="fa-solid fa-eye-low-vision"></i></button>
+                <button class="option-button" onclick="toggleTextSize('increase')"><i class="fa-solid fa-font"></i></button>
+                <button class="option-button" onclick="toggleTextSize('decrease')"><i class="fa-solid fa-font fa-2xs"></i></button>
+                <button class="option-button" onclick="scrollToBottom()"><i class="fa-solid fa-angles-down"></i></button>
+                <button class="option-button" onclick="resetAccessibilitySettings()"><i class="fa-solid fa-rotate"></i></button>
             </div>
-            </div>
         </div>
-        
-    
-        
-
+            
         <header>
             <div class="nav">
-                <ul>
-                    <li>
-                        <img id="logo" src="images/logo2.png" width="300px"> <!-- Use a default logo image -->
-                        <img id="high-contrast-logo" src="images/logo3.png" width="300px" style="display: none"> <!-- Use the high contrast logo image, initially hidden -->
-                    </li>
-                    <li><a class="active" href="index.html">HOME</a></li>
-                    <li><a href="tourist.html">TOURIST SPOTS</a></li>
-                    <li><a href="history.html">HISTORY</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="government.html">GOVERNMENT</a></li>
-                </ul>
+                <div class="logo-container">
+                    <a href="index.html">
+                    <img id="logo" src="images/logo2.png" width="300px">
+                    <img id="high-contrast-logo" src="images/logo3.png" width="300px" style="display: none">
+                    </a>
+                </div>
+                
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="tourist.html">EXPLORE</a></li>
+                <li><a href="history.html">HISTORY</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="government.html">GOVERNMENT</a></li>
+            </ul>
+
             </div>
         </header>
+        <!---END OF NAV BAR--->
+        
 
 
         <div class="intro">
@@ -109,7 +114,7 @@
                 <div class="right">
                     <img src="images/one1.png" id="right1">
                     <p id="p1">Santa Rita, Pampanga, is a captivating destination offering a blend of history, nature, and culture. Its historic Santa Rita de Cascia Parish Church and picturesque Mount Arayat stand out as must-see attractions. Enjoy vibrant festivals, local markets, and delicious cuisine, making it an enriching and diverse destination for all travelers.</p>       
-                    <a href="#">CHECK ATTRACTIONS</a>
+                    <a href="attractions.html">CHECK ATTRACTIONS</a>
                 </div>
             </div>
 
@@ -119,7 +124,7 @@
                     <img src="images/two2222.png" id="right11">
                     <p id="p1">
                         Santa Rita, Pampanga, is a gastronomic haven where you can savor Kapampangan classics like Sisig and Tibok-Tibok, offering a delightful taste of local culture and heritage. Don't miss the chance to explore the flavors of Santa Rita and indulge in a unique culinary experience during your visit.</p>       
-                    <a href="#" id="urban">CHECK FOODS</a>
+                    <a href="food.html" id="urban">CHECK FOODS</a>
                 </div>
 
                 <div class="left2">
@@ -138,8 +143,8 @@
 
                 <div class="right">
                     <img src="images/three3.png" id="right1">
-                    <p id="p1">Recreation in Santa Rita, Pampanga, offers a delightful array of activities for those seeking leisure and entertainment. Enjoy a leisurely day by the serene Santa Rita Dam, perfect for picnics, fishing, or simply unwinding amidst picturesque surroundings. Golf enthusiasts can tee off at the nearby Mimosa Golf and Country Club, offering lush greens and stunning views of Mount Arayat.</p>       
-                    <a href="#">CHECK RECREATION</a>
+                    <p id="p1">Santa Rita hosts a dynamic festival scene, weaving together traditions and modern celebrations. Immerse yourself in the vibrant energy of the town's festivals, where lively events showcase the unique cultural tapestry of Santa Rita, creating memorable experiences for visitors.</p>       
+                    <a href="festivals.html">CHECK FESTIVALS</a>
                 </div>
             </div>
 
@@ -149,7 +154,7 @@
                 <div class="right2">
                     <img src="images/four4.png" id="right11">
                     <p id="p1">Santa Rita, Pampanga, is a place where history and spirituality converge, with several remarkable churches that are not to be missed. The Santa Rita de Cascia Parish Church is the town's centerpiece, with its grand baroque architecture and a rich history dating back to Spanish colonial times.</p>       
-                    <a href="#">CHECK CHURCHES</a>
+                    <a href="churches.html">CHECK CHURCHES</a>
                 </div>
 
                 <div class="left2">
@@ -158,7 +163,16 @@
                 
             </div>
         </div>
-
+        <div id="location-info">
+            <h1>Welcome to Santa Rita, Pampanga!</h1>
+            <p>Discover the enchanting beauty of Santa Rita, a picturesque town nestled in the heart of Pampanga, Philippines.</p>
+            <p>With its rich cultural heritage and warm hospitality, Santa Rita invites you to explore its historic sites, vibrant local markets, and delicious cuisine.</p>
+            <p>Take a stroll through the charming streets, visit the iconic landmarks, and immerse yourself in the unique blend of tradition and modernity that defines Santa Rita.</p>
+        </div>
+    
+        <!-- Replace the existing map container with the provided iframe -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61655.83241837274!2d120.55711888739668!3d15.021016076403976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f5936411d34f%3A0x2fe8bbed54886af0!2sSanta%20Rita%2C%20Pampanga!5e0!3m2!1sen!2sph!4v1700480587493!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        
             
 
             
@@ -225,13 +239,16 @@
                 it's a popular pilgrimage site.</p>
 
                 
-                <a class="button" href="#">LEARN MORE</button>
+                <a class="button" href="single-page.html">LEARN MORE</button>
          </div>
          </section> 
          
-         <section>
-            
-         </section>
+    
+          
+            <button class="scroll-to-top" onclick="scrollToTop()">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+         
 
 
          <script src="js/playlist.js"></script>
@@ -278,6 +295,15 @@ function resetAccessibilitySettings() {
     body.classList.remove('high-contrast');
     document.getElementById('logo').src = "images/logo2.png"; // Reset logo to normal mode
 }
+
+function scrollToBottom() {
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+
+        function scrollToTop() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        }
         </script>
          
     </body>

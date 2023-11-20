@@ -21,7 +21,7 @@
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 160px;
+    
     border: 1px solid #ccc;
     border-radius: 4px;
     z-index: 1;
@@ -31,8 +31,7 @@
     display: block;
     padding: 10px;
     text-align: center;
-    background-color: #3498db;
-    color: #fff;
+    color: black;
     text-decoration: none;
     cursor: pointer;
     border: none;
@@ -46,6 +45,40 @@
 .custom-dropdown:hover .custom-options {
     display: block;
 }
+
+.scroll-to-bottom {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.scroll-to-bottom:hover {
+    background-color: #2980b9;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.scroll-to-top:hover {
+    background-color: #2980b9;
+}
+
 
 /* Change the background color, text color, and link color when high contrast mode is active */
 .high-contrast {
@@ -158,6 +191,11 @@
     color: white;
 }
 
+.high-contrast .department-item{
+    background-color: black;
+}
+
+
 
 
 .text-size .bg-container .discover-container{
@@ -231,3 +269,114 @@
         }
 
         
+
+        .h1h1.increase-text h1 {
+            font-size: 300%; /* Adjust the percentage based on your preference */
+        }
+        
+        /* Reset text size within .h1h1 section */
+        .h1h1.decrease-text h1 {
+            font-size: 100%;
+        }
+
+
+        .attraction-card.increase-text .attraction-title {
+            font-size: 220%; /* Adjust the percentage based on your preference */
+        }
+        
+        .attraction-card.increase-text .attraction-description {
+            font-size: 110%; /* Adjust the percentage based on your preference */
+        }
+        
+        /* Reset text size within .attraction-card */
+        .attraction-card.decrease-text .attraction-title,
+        .attraction-card.decrease-text .attraction-description {
+            font-size: 100%;
+        }
+
+
+        .history.increase-text h1 {
+            font-size: 200%; /* Adjust the font size based on your preference */
+        }
+        
+        .history.increase-text p {
+            font-size: 150%; /* Adjust the font size based on your preference */
+        }
+        
+        /* Reset text size within .history */
+        .history.decrease-text h1,
+        .history.decrease-text p {
+            font-size: 80%; /* Inherit the font size from the parent element */
+        }
+
+        .increase-text h1.section-title,
+.increase-text li.department-item p,
+.increase-text .department-content h2.content-title,
+.increase-text .department-content ol.content-list li {
+    font-size: 150%px; /* Adjust the font size based on your preference */
+}
+
+/* Reset text size within the document */
+.decrease-text h1.section-title,
+.decrease-text li.department-item p,
+.decrease-text .department-content h2.content-title,
+.decrease-text .department-content ol.content-list li {
+    font-size: inherit; /* Inherit the font size from the parent element */
+}
+
+#department-list .increase-text p{
+    font-size: 150%;
+}
+
+#department-list .decrease-text p{
+    font-size: 80%;
+}
+
+.department-content .increase-text h2{
+    font-size: 200%;
+}
+
+#department-1-content .department-content .increase-text h2{
+    font-size: 180%;
+}
+
+/* Increase text size within the document */
+.increase-text h2.content-title,
+.increase-text ol.content-list li {
+    font-size: 18px; /* Adjust the font size based on your preference */
+}
+
+/* Reset text size within the document */
+.decrease-text h2.content-title,
+.decrease-text ol.content-list li {
+    font-size: inherit; /* Inherit the font size from the parent element */
+}
+
+/* Increase text size within .department-content */
+.department-content.increase-text h2 {
+    font-size: 24px; /* Adjust the font size based on your preference */
+}
+
+.department-content.increase-text ol li {
+    font-size: 18px; /* Adjust the font size based on your preference */
+}
+
+/* Reset text size within .department-content */
+.department-content.decrease-text h2,
+.department-content.decrease-text ol li {
+    font-size: inherit; /* Inherit the font size from the parent element */
+}
+
+
+.officials .increase-text {
+    font-size: 200%;
+}
+
+.officials .decrease-text {
+    font-size: 80%;
+}
+
+.council .council-names div .increase-text {
+    font-size: 300%;
+}
+

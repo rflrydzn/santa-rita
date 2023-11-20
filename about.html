@@ -1,0 +1,230 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="css/tourist.css" type="text/css">
+        <link rel="stylesheet" href="css/dropdown.css" type="text/css">
+        <link rel="stylesheet" href="accessibility.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Readex%20Pro">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Readex%20Pro">
+        
+        <script src="https://kit.fontawesome.com/5c825ad570.js" crossorigin="anonymous"></script>
+        
+        
+        <style>
+        *{
+            background-color: #f0f0f0;
+        }
+        .team-container{
+            font-family: Arial, sans-serif;
+            margin: 0 ;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            
+            justify-content: center;
+            
+        }
+
+
+        .h1h1 {
+            font-family: Helvetica;
+            font-weight: 800;
+            color: #4f4f4f;
+            text-align: center;
+            font-size: 30px;
+            margin-top: 20px;
+        }
+
+        .card1 {
+            width: 200px;
+            margin: 20px;
+            text-align: center;
+            
+        }
+
+        .circle-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .circle-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .name{
+            font-family: 'Readex Pro';
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .oat{
+            font-size: 2rem;
+            font-family: 'Montserrat';
+            font-weight: 600;
+            margin-right: 4% ;
+            
+        }
+
+        .oatext{
+            font-family: 'Open Sans';
+            font-size: 1.3rem;
+            width: 100%;
+            max-width: 40%;
+        }
+        
+        .oatoat{
+            display: flex;
+            margin-top: 4%;
+            justify-content: center;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                width: 80%;
+            }
+        }
+        </style>
+    </head>
+
+    <body>
+        <!---NAV BAR--->
+        <div class="custom-dropdown">
+            <button class="dropdown-label"><i class="fa-brands fa-accessible-icon"></i></button>
+            <div class="custom-options">
+                <button class="option-button" onclick="toggleHighContrast()"><i class="fa-solid fa-eye-low-vision"></i></button>
+                <button class="option-button" onclick="toggleTextSize('increase')"><i class="fa-solid fa-font"></i></button>
+                <button class="option-button" onclick="toggleTextSize('decrease')"><i class="fa-solid fa-font fa-2xs"></i></button>
+                <button class="option-button" onclick="scrollToBottom()"><i class="fa-solid fa-angles-down"></i></button>
+                <button class="option-button" onclick="resetAccessibilitySettings()"><i class="fa-solid fa-rotate"></i></button>
+            </div>
+        </div>
+            
+        <header>
+            <div class="nav">
+                <div class="logo-container">
+                    <a href="index.html">
+                    <img id="logo" src="images/logo2.png" width="300px">
+                    <img id="high-contrast-logo" src="images/logo3.png" width="300px" style="display: none">
+                    </a>
+                </div>
+                
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="tourist.html">EXPLORE</a></li>
+                <li><a href="history.html">HISTORY</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="government.html">GOVERNMENT</a></li>
+            </ul>
+
+            </div>
+        </header>
+        <!---END OF NAV BAR--->
+        <br>
+    <!-- <div class="h1h1">
+    <h1>About the team</h1>
+    </div> -->
+
+    <div class="oatoat">
+    <p class="oat">Our Amazing Team</p>
+    <p class="oatext">Welcome to the CPE-301 team at Holy Angel University! We are proud to introduce our dedicated members: Rafael Dizon, 
+        Mike Bunag, Russel Samson, and Oppus Angelo. As computer engineering students, we recently undertook an exciting 
+        software development project, creating a dynamic tourism website for Santa Rita. Through our collaborative efforts, 
+        we've crafted a platform that highlights the unique attractions, events, and cultural experiences that Santa Rita 
+        has to offer. This project not only showcases our technical skills but also serves as a valuable contribution to 
+        the promotion of tourism in the community. </p>
+    </div>
+
+    <div class="team-container">
+        
+    <div class="card1">
+        <div class="circle-img">
+            <img src="images/roy.jpg" alt="Person 1">
+        </div>
+        <div class="name">Rafael Dizon</div>
+        <div class="email">kuhaku.blank.rd@gmail.com</div>
+    </div>
+
+    <div class="card1">
+        <div class="circle-img">
+            <img src="images/mike.jpg" alt="Person 2">
+        </div>
+        <div class="name">Mike Bunag</div>
+        <div class="email">mfdb0403@gmail.com</div>
+    </div>
+
+    <div class="card1">
+        <div class="circle-img">
+            <img src="images/oppus.jpg" alt="Person 3">
+        </div>
+        <div class="name">Angelo Oppus</div>
+        <div class="email">oppusangelo2@gmail.com</div>
+    </div>
+
+    <div class="card1">
+        <div class="circle-img">
+            <img src="images/wushel.jpg" alt="Person 4">
+        </div>
+        <div class="name">Russel Samson</div>
+        <div class="email">russelsamson819@gmail.com
+        </div>
+    </div>
+</div>
+
+
+    
+    
+
+    <script src="js/dropdown.js"></script>
+         <script>
+                let isHighContrast = false;     
+
+function toggleHighContrast() {
+    const body = document.body;
+    const logo = document.getElementById('logo');
+    isHighContrast = !isHighContrast; // Toggle the mode
+    if (isHighContrast) {
+        body.classList.add('high-contrast'); // Set to high contrast mode
+        logo.src = "images/logo3.png"; // Change logo for high contrast mode
+    } else {
+        body.classList.remove('high-contrast'); // Revert to normal mode
+        logo.src = "images/logo2.png"; // Change logo back to normal mode
+    }
+}
+
+function toggleTextSize(option) {
+    const elementsToToggle = document.querySelectorAll('.bg-container, .church, .nav, .intro, .h1id, .h1h1, .attraction-card');
+
+    elementsToToggle.forEach(element => {
+        if (option === 'increase') {
+            element.classList.add('increase-text');
+            element.classList.remove('decrease-text');
+        } else if (option === 'decrease') {
+            element.classList.remove('increase-text');
+            element.classList.add('decrease-text');
+        }
+    });
+}
+
+function resetAccessibilitySettings() {
+    const elementsToReset = document.querySelectorAll('.bg-container, .church, .nav, .intro, .h1id, .h1h1, .attraction-card');
+    const body = document.body;
+
+    elementsToReset.forEach(element => {
+        element.classList.remove('increase-text');
+        element.classList.remove('decrease-text');
+    });
+
+    body.classList.remove('high-contrast');
+    document.getElementById('logo').src = "images/logo2.png"; // Reset logo to normal mode
+}
+
+
+        </script>

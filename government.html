@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link rel="stylesheet" href="accessibility.css">
+        <link rel="stylesheet" href="css/dropdown.css" type="text/css">
+        
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Readex%20Pro">
        
     
@@ -17,8 +19,59 @@
             
         }
 
-        .nav{
-    background-color: #f0f0f0;
+        .nav {
+  background-color: #f0f0f0;
+  display: flex;
+  
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo-container {
+  text-align: center; /* Center the content within .logo-container */
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  display: flex;
+}
+
+li {
+  margin-right: 15px;
+}
+
+li:last-child {
+  margin-right: 0;
+}
+
+li a {
+  display: block;
+  font-family: 'Readex Pro';
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+/* Updated media query */
+@media screen and (max-width: 1000px) {
+  .nav {
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  .logo-container {
+      margin-bottom: 10px; /* Adjust spacing between logo and links */
+  }
+
+  ul {
+      margin-top: 10px; /* Adjust spacing between logo and links */
+  }
 }
 
 #yuel {
@@ -85,7 +138,8 @@
         /* Style for department content */
         .department-content {
             display: none;
-            background-color: #f0f0f0;
+            /* background-color: #f0f0f0; */
+            background-image: url(govbg.png);
             padding: 10px;
             border-radius: 5px;
             transition: opacity 0.5s;
@@ -134,7 +188,8 @@
 
     .officials{
         display: flex;
-        background-color: #f0f0f0;
+        /* background-color: #f0f0f0; */
+        background-image: url(official2.png);
         width: 100%;
         justify-content: center;
         
@@ -153,7 +208,10 @@
 
     .council{
         display: flex;
-        background-color: #f0f0f0;
+        /* background-color: #f0f0f0; */
+        background-image: url(official2.png);
+        background-size: cover;
+        background-position: center;
         flex-direction: column;
     }
 
@@ -205,7 +263,7 @@
         .vismis{
             background-color: #f0f0f0;
             padding-top: 5%;
-            
+            padding-bottom: 5%;
             display: flex;
             justify-content: center;
         }
@@ -248,7 +306,8 @@
         }
 
         .main-container{
-            background-color: #f0f0f0;
+            /* background-color: #f0f0f0; */
+            background-image: url(execbg.png);
         }
     @media (max-width: 1400px) {
             #department-list {
@@ -265,19 +324,38 @@
     
 </head>
 <body>
+    <!---NAV BAR--->
+    <div class="custom-dropdown">
+        <button class="dropdown-label"><i class="fa-brands fa-accessible-icon"></i></button>
+        <div class="custom-options">
+            <button class="option-button" onclick="toggleHighContrast()"><i class="fa-solid fa-eye-low-vision"></i></button>
+            <button class="option-button" onclick="toggleTextSize('increase')"><i class="fa-solid fa-font"></i></button>
+            <button class="option-button" onclick="toggleTextSize('decrease')"><i class="fa-solid fa-font fa-2xs"></i></button>
+            <button class="option-button" onclick="scrollToBottom()"><i class="fa-solid fa-angles-down"></i></button>
+            <button class="option-button" onclick="resetAccessibilitySettings()"><i class="fa-solid fa-rotate"></i></button>
+        </div>
+    </div>
+        
     <header>
         <div class="nav">
-            <ul id="yuel">
-                <li id="elay"><img src="images/logo2.png" width="300px"></li>
-                <li id="elay"><a href="index.html">HOME</a></li>
-                <li id="elay"><a href="tourist.html">TOURIST SPOTS</a></li>
-                <li id="elay"><a href="history.html">HISTORY</a></li>
-                <li id="elay"><a href="about.html">ABOUT</a></li>
-                <li id="elay"><a href="government.html">GOVERNMENT</a></li>
+            <div class="logo-container">
+                <a href="index.html">
+                <img id="logo" src="images/logo2.png" width="300px">
+                <img id="high-contrast-logo" src="images/logo3.png" width="300px" style="display: none">
+                </a>
+            </div>
+            
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="tourist.html">EXPLORE</a></li>
+            <li><a href="history.html">HISTORY</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="government.html">GOVERNMENT</a></li>
+        </ul>
 
-            </ul>
         </div>
     </header>
+    <!---END OF NAV BAR--->
 
     
     <h1 style="background-color: #f0f0f0; text-align: center; font-size: 2.5rem; padding: 1%;">Departments/Offices</h1>
@@ -350,7 +428,7 @@
     <div id="department-2-content" class="department-content">
         <h2>FUNCTIONS OF THE OFFICE OF THE MUNICIPAL PLANNING AND DEVELOPMENT COORDINATION<br><br></h2>
         <h3>MPDC/DZAA;</h3>
-        <p>Formulate integrated physio socio-economic development plans and policies for consideration of the local government development council. Prepares comprehensive plans and coordinate all sectoral plans and finally, monitors and evaluate the implementation of different development programs and projects in the local unit. <br><br>
+        <p>Formulate integrated physio socio-economic development plans and policies for consideration of the local government development council. Prepares comprehensive plans and coordinate all sectoral plans<br> and finally, monitors and evaluate the implementation of different development programs and projects in the local unit. <br><br>
         <ol>
             <li>Prepared/Issued Zoning Clearance to applicants for ECC and Land conversion;</li>
             <li>Prepared/Evaluated/Issued Location Clearance to applicants of building permit;</li>
@@ -527,7 +605,7 @@
 
     <div id="department-8-content" class="department-content">
         <h2>FUNCTIONS OF THE OFFICE OF THE MUNICIPAL AGRICULTURIST<br><br></h2>
-        <p>To facilitate agricultural production through the provision of technical support to farmers and community based initiatives, and the creation of a conducive environment for increased investment in agriculture. In an effort to achieve these ideas, the department will embarked in a holistic development approach by participating in the formulation of Integrated Development Plans and other planning initiatives of the local government units.<br><br></p>
+        <p>To facilitate agricultural production through the provision of technical support to farmers and community based initiatives, and the creation of a conducive environment for increased investment in agriculture. <br>In an effort to achieve these ideas, the department will embarked in a holistic development approach by participating in the formulation of Integrated Development Plans and other planning initiatives of the <br>local government units.<br><br></p>
         <h3>Activities:<br><br></h3>
         <ol>
             <li>Farmers Dialogue</li>
@@ -536,10 +614,10 @@
             <li>Farm inputs distribution</li>
             <li>Fingerlings distribution</li>
             <li>Massive vaccination
-                <ul>
+                <!-- <ul>
                     <li>Anti Rabies</li>
-                    <li>Anti Hemorrhagic Septicemia</li>
-                </ul>
+                    <li>Anti Hemorrhagic Septicemia
+                </ul> -->
             </li>
             <li>Massive livestock deworming and vitamin injection</li>
             <li>Municipal Nursery maintenance</li>
@@ -552,16 +630,16 @@
         <h2>FUNCTIONS OF THE OFFICE OF THE MUNICIPAL ASSESSOR<br><br></h2>
         <ol>
             <li>Ensure that all laws and policies governing the appraisal and assessment of real properties for taxation purposes are properly executed;</li>
-            <li>Initiate, review, and recommend changes in policies and objectives, plans and programs, techniques, procedures, and practices in the valuation and assessment of real properties for taxation purposes;</li>
+            <li>Initiate, review, and recommend changes in policies and objectives, plans and programs, techniques, procedures, and practices in the valuation and assessment<br> of real properties for taxation purposes;</li>
             <li>Establish a systematic method of real property assessment;</li>
             <li>Install and maintain real property identification and accounting system;</li>
             <li>Prepare, install, and maintain a system of tax ,mapping, showing graphically all property subject to assessment and gather all data concerning the same;</li>
             <li>Conduct frequent physical survey to verify and determine as to whether or not all real properties within the province are property listed in the assessment roll;</li>
             <li>Exercise the function of appraisal and assessment primarily for taxation purposes of all real properties in the LGU concerned;</li>
             <li>Prepare a schedule of fair market values for the different classes of real properties, in a accordance with Title Two, Book II of the Code;</li>
-            <li>Issue, upon request of any interested party, certified copies off assessment records of real property and all other records relative to its assessment, upon payment of a service charge or fee to the treasure;    </li>
+            <li>Issue, upon request of any interested party, certified copies off assessment records of real property and all other records relative to its assessment, upon<br> payment of a service charge or fee to the treasure;    </li>
             <li>Submit every semester a report of all assessment , as well as cancellations and modifications, to the local chief executive and the sanggunian concerned;</li>
-            <li>In the case assessor of a component city or municipality, attend personally or through an authorized representative, all sessions on the local board of assessment appeals whenever his assessment is the subject of the appeal, and present or submit any information or record in his possession as many be required by the board;</li>
+            <li>In the case assessor of a component city or municipality, attend personally or through an authorized representative, all sessions on the local board of<br> assessment appeals whenever his assessment is the subject of the appeal, and present or submit any information or record in his possession as many be required by the board;</li>
         </ol>
         <hr>
     </div>
@@ -571,7 +649,7 @@
         <ol>
             <li>Executes and implements policies and programs established by Program Bureaus and render administrative decisions on matter within the limits of delegated authority.</li>
             <li>Maintains cooperative and harmonious relationship with other entities and agencies, private and public in promoting social welfare development</li>
-            <li>Supervises day care workers and administrative staff in the performance of their duties, and assigned workloads and administrative staff in the performance of their duties, and assigned workloads to ensure equitable and proper distribution of personnel.</li>
+            <li>Supervises day care workers and administrative staff in the performance of their duties, and assigned workloads and administrative staff in the performance of their duties, and assigned workloads <Br> to ensure equitable and proper distribution of personnel.</li>
             <li>Conducts regular supervisory conference (individual group as well as community discussions) to staff for a better program interpretations.</li>
             <li>Supervise reporting management of office to most target goals.</li>
             <li>Responsible to carry out welfare programs within the coverage areas.</li>
@@ -606,7 +684,7 @@
             It is also tasked to promote environmental sanitation and to enforce health and sanitation standards.<br>
             
             Services offered are as follows:<br><br></p>
-            <ul>
+            <ol>
                 <li>Medical Consultations at the Rural Health Units or BHS</li>
                 <li>Minor Surgical Consultation</li>
                 <li>Issuance of Sanitary Permit and Health Card</li>
@@ -624,7 +702,7 @@
                 <li>Ambulatory Services</li>
                 <li>Monitor Nutritional Status of Children</li>
                 <li>Disease Surveillance Unit during Disasters and Outbreaks</li>
-            </ul>
+            </ol>
             <hr>
     </div>
 
@@ -643,9 +721,10 @@
         <hr>
     </div>
 
-    
+    <hr style="background-color: #f0f0f0; margin: 0;">
     
     <h1 style="background-color: #f0f0f0; text-align: center; font-size: 2.5rem; padding: 1%; padding-top: 2%; padding-bottom: 2%;">Officials</h1>
+    
     <div class="officials">
         
         <div class="mayor">
@@ -655,10 +734,10 @@
         </div>
         <div class="mayor">
         <img src="images/mayor2.png">
-        <h2>HON.MERCEDITA B. CARREON</h2>
+        <h2>HON.MERCEDITA B. CARREON</h2>       
         <p>VICE MAYOR</p>
         </div>
-        </div>
+    </div>
 
         <div class="council">
         <div class="council-names">
@@ -709,7 +788,7 @@
 
         <div class="vismis">
             <div class="card-2">
-                <i class="fas fa-eye"></i>
+                <i class="fas fa-eye" style="color: black;"></i>
                 <h2 class="card2-title">Vision</h2>
                 <p>We envision Santa Rita as the Sarswela Capital in the Region, with God-loving,
                     productive and contented Riteñans, having a sense of pride and involvement for its
@@ -719,7 +798,7 @@
             </div>
     
             <div class="card-2">
-                <i class="fas fa-bullseye"></i>
+                <i class="fas fa-bullseye" style="color: black;"></i>
                 <h2 class="card2-title">Mission</h2>
                 <p>To pursue optimum growth through an effective governance propelled by empowered
                     multi-sectoral participation and spiritual commitment. </p>
@@ -727,26 +806,26 @@
         
         </div>
 
-        
+        <hr style="background-color: #f0f0f0; margin: 0;">
         <h1 style="background-color: #f0f0f0; text-align: center; font-size: 2.5rem; padding: 1%; padding-top: 2%; padding-bottom: 2%;">Executive Orders</h1>
          <div class="main-container">
             <div class="card-container">
-                <a href="your-link-here" class="card">
+                <a href="2021.html" class="card">
                     <h3>Executive Orders 2021</h3>
                     <p>These are the executive orders issued in the year 2021. This content provides information about their impact and significance.</p>
                 </a>
         
-                <a href="your-link-here" class="card">
+                <a href="2021.html" class="card">
                     <h3>Executive Orders 2012</h3>
                     <p>Here, you'll find details about the executive orders from the year 2012 and their implications on various matters.</p>
                 </a>
         
-                <a href="your-link-here" class="card">
+                <a href="2021.html" class="card">
                     <h3>Executive Orders 2011</h3>
                     <p>Discover the executive orders enacted in 2011 and their influence on policies and regulations during that year.</p>
                 </a>
         
-                <a href="your-link-here" class="card">
+                <a href="2021.html" class="card">
                     <h3>Executive Orders 2010</h3>
                     <p>This section covers the executive orders issued in 2010, offering insights into their impact on government actions and decisions.</p>
                 </a>
@@ -754,6 +833,7 @@
             <hr>
         </div>
 
+        
         
 
 
@@ -775,5 +855,54 @@
             }
         }
     </script>
+
+<script src="js/dropdown.js"></script>
+<script>
+       let isHighContrast = false;
+
+function toggleHighContrast() {
+const body = document.body;
+const logo = document.getElementById('logo');
+isHighContrast = !isHighContrast; // Toggle the mode
+if (isHighContrast) {
+body.classList.add('high-contrast'); // Set to high contrast mode
+logo.src = "images/logo3.png"; // Change logo for high contrast mode
+} else {
+body.classList.remove('high-contrast'); // Revert to normal mode
+logo.src = "images/logo2.png"; // Change logo back to normal mode
+}
+}
+
+function toggleTextSize(option) {
+const elementsToToggle = document.querySelectorAll('.bg-container, .church, .nav, .intro, .h1id, .h1h1, .attraction-card, .paper-container, .history, .section-title, .department-item p, .content-title, .content-list li, #department-list, .department-item, .department-content, #department-1-content, .mayor, .officials, .council, .council-names');
+
+elementsToToggle.forEach(element => {
+if (option === 'increase') {
+   element.classList.add('increase-text');
+   element.classList.remove('decrease-text');
+} else if (option === 'decrease') {
+   element.classList.remove('increase-text');
+   element.classList.add('decrease-text');
+}
+});
+}
+
+function resetAccessibilitySettings() {
+const elementsToReset = document.querySelectorAll('.bg-container, .church, .nav, .intro, .h1id, .h1h1, .attraction-card, .paper-container, .history');
+const body = document.body;
+
+elementsToReset.forEach(element => {
+element.classList.remove('increase-text');
+element.classList.remove('decrease-text');
+});
+
+body.classList.remove('high-contrast');
+document.getElementById('logo').src = "images/logo2.png"; // Reset logo to normal mode
+}
+
+function scrollToBottom() {
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+</script>
 </body>
 </html>
