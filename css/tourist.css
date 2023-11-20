@@ -44,3 +44,30 @@
 .attraction-card:hover {
     transform: scale(1.05); /* Increase size on hover */
 }
+
+.attraction-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ee4d9b; /* Pink color */
+    color: #fff;
+    padding: 5px 10px;
+    border-bottom-left-radius: 2rem;
+    font-weight: bold;
+    z-index: 1; /* Ensure the badge is on top of the image */
+}
+
+/* Color for Churches badge */
+.attraction-card .attraction-badge.churches {
+    background-color: #502670; /* Dark purple color for Churches */
+}
+
+/* Color for Festivals badge */
+.attraction-card .attraction-badge.festivals {
+    background-color: #ffd834; /* Yellow color for Festivals */
+}
+
+/* Color for Foods badge */
+.attraction-card .attraction-badge.foods {
+    background-color: #4caf50; /* Green color for Foods */
+}
