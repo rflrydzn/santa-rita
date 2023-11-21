@@ -1,153 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Accessibility Options</title>
-    <style>
-        /* Style for the dropdown container */
-        .custom-dropdown {
-            position: relative;
-            display: inline-block;
-            margin: 10px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .image-container {
+      position: relative;
+      display: inline-block;
+    }
 
-        /* Style for the label button */
-        .dropdown-label {
-            padding: 10px;
-            background-color: #3498db;
-            color: #fff;
-            cursor: pointer;
-            border: none;
-            border-radius: 4px.
-        }
+    .image-container:hover::after {
+      content: attr(alt);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 0.5em;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      font-size: 14px;
+      text-align: center;
+      border-radius: 5px;
+      z-index: 999;
+    }
 
-        /* Style for the options */
-        .custom-options {
-            display: none;
-            position: absolute;
-            background-color: #f1f1f1;
-            min-width: 160px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            z-index: 1;
-        }
-
-        .option-button {
-            display: block;
-            padding: 10px;
-            text-align: center;
-            background-color: #3498db;
-            color: #fff;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-        }
-
-        .option-button:hover {
-            background-color: #2980b9;
-        }
-
-        /* Show options when hovering over the dropdown container */
-        .custom-dropdown:hover .custom-options {
-            display: block;
-        }
-
-        /* Change the background color, text color, and link color when high contrast mode is active */
-        .high-contrast {
-            background-color: black;
-            color: white;
-        }
-
-        /* Change the color of all anchor links */
-        .high-contrast a {
-            color: yellow;
-        }
-
-        /* Change the color of all paragraphs */
-        .high-contrast p {
-            color: white;
-        }
-        
-        /* Change the style of the navigation bar in high contrast mode */
-        .high-contrast .nav {
-            background-color: #333; /* Dark background */
-        }
-
-        .high-contrast .nav ul {
-            background-color: transparent;
-        }
-
-        .high-contrast .nav li {
-            padding: 10px;
-        }
-
-        .high-contrast .nav a {
-            color: yellow;
-            text-decoration: none;
-        }
-    </style>
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
-    <div class="custom-dropdown">
-        <button class="dropdown-label">Accessibility Options</button>
-        <div class="custom-options">
-            <button class="option-button" onclick="toggleHighContrast()">High Contrast Mode</button>
-            <button class="option-button" onclick="increaseTextSize()">Increase Text</button>
-            <button class="option-button" onclick="decreaseTextSize()">Decrease Text</button>
-        </div>
-    </div>
 
-    <header>
-        <div class="nav">
-            <ul>
-                <li>
-                    <img id="logo" src="images/logo1.png" width="300px"> <!-- Use a default logo image -->
-                    <img id="high-contrast-logo" src="images/logo3.png" width="300px" style="display: none"> <!-- Use the high contrast logo image, initially hidden -->
-                </li>
-                <li><a class="active" href="index.html">HOME</a></li>
-                <li><a href="tourist.html">TOURIST SPOTS</a></li>
-                <li><a href="history.html">HISTORY</a></li>
-                <li><a href="#">ABOUT</a></li>
-            </ul>
-        </div>
-    </header>
+  <div class="image-container" alt="This is the alt text">
+    <img src="your-image-source.jpg" alt="This is the alt text">
+  </div>
 
-    <div class="content">
-        <h2>Content Area</h2>
-        <p>This is the content area of the page.</p>
-        <a href="#">Sample Link 1</a>
-        <a href="#">Sample Link 2</a>
-        <a href="#">Sample Link 3</a>
-    </div>
-
-    <p>This is a sample paragraph outside the content area.</p>
-
-    <script>
-        // JavaScript to toggle high contrast mode
-        let isHighContrast = false;
-
-        function toggleHighContrast() {
-            const body = document.body;
-            if (isHighContrast) {
-                body.classList.remove('high-contrast'); // Revert to normal mode
-                document.getElementById('logo').style.display = 'block'; // Show the default logo
-                document.getElementById('high-contrast-logo').style.display = 'none'; // Hide the high contrast logo
-            } else {
-                body.classList.add('high-contrast'); // Set to high contrast mode
-                document.getElementById('logo').style.display = 'none'; // Hide the default logo
-                document.getElementById('high-contrast-logo').style.display = 'block'; // Show the high contrast logo
-            }
-            isHighContrast = !isHighContrast; // Toggle the mode
-        }
-
-        // JavaScript to increase text size
-        function increaseTextSize() {
-            document.body.style.fontSize = '120%';
-        }
-
-        // JavaScript to decrease text size
-        function decreaseTextSize() {
-            document.body.style.fontSize = '80%';
-        }
-    </script>
 </body>
 </html>

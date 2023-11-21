@@ -25,6 +25,44 @@
                 width: 100%;
                 height: 50%;
             }
+            .custom-options {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .option-button {
+      padding: 10px;
+      border: none;
+      text-align: left;
+      text-decoration: none;
+      display: block;
+      width: 100%;
+      cursor: pointer;
+      position: relative; /* Added position relative */
+    }
+
+    .option-button::after {
+      content: attr(alt);
+      position: absolute;
+      top: 50%;
+      left: -120%; /* Adjust this value to control the distance from the icon */
+      transform: translateY(-50%);
+      padding: 8px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      font-size: 14px;
+      border-radius: 5px;
+      white-space: nowrap;
+      display: none;
+    }
+
+    .option-button:hover::after {
+      display: block;
+    }
 
             @media screen and (max-width: 360px) {
                 .intro{
@@ -61,15 +99,15 @@
     <body>
         <!---NAV BAR--->
         <div class="custom-dropdown">
-            <button class="dropdown-label"><i class="fa-brands fa-accessible-icon"></i></button>
+            <button class="dropdown-label" alt="Accessibility Options"><i class="fa-brands fa-accessible-icon"></i></button>
             <div class="custom-options">
-                <button class="option-button" onclick="toggleHighContrast()"><i class="fa-solid fa-eye-low-vision"></i></button>
-                <button class="option-button" onclick="toggleTextSize('increase')"><i class="fa-solid fa-font"></i></button>
-                <button class="option-button" onclick="toggleTextSize('decrease')"><i class="fa-solid fa-font fa-2xs"></i></button>
-                <button class="option-button" onclick="scrollToBottom()"><i class="fa-solid fa-angles-down"></i></button>
-                <button class="option-button" onclick="resetAccessibilitySettings()"><i class="fa-solid fa-rotate"></i></button>
+              <button class="option-button" onclick="toggleHighContrast()" alt="Toggle High Contrast"><i class="fa-solid fa-eye-low-vision"></i></button>
+              <button class="option-button" onclick="toggleTextSize('increase')" alt="Increase Text Size"><i class="fa-solid fa-font"></i></button>
+              <button class="option-button" onclick="toggleTextSize('decrease')" alt="Decrease Text Size"><i class="fa-solid fa-font fa-2xs"></i></button>
+              <button class="option-button" onclick="scrollToBottom()" alt="Scroll to Bottom"><i class="fa-solid fa-angles-down"></i></button>
+              <button class="option-button" onclick="resetAccessibilitySettings()" alt="Reset Accessibility Settings"><i class="fa-solid fa-rotate"></i></button>
             </div>
-        </div>
+          </div>
             
         <header>
             <div class="nav">
@@ -239,13 +277,13 @@
                 it's a popular pilgrimage site.</p>
 
                 
-                <a class="button" href="single-page.html">LEARN MORE</button>
+                <a class="button3" href="">LEARN MORE</button>
          </div>
          </section> 
          
     
           
-            <button class="scroll-to-top" onclick="scrollToTop()">
+            <button class="scroll-to-top" onclick="scrollToTop()" alt="Back to Top">
                 <i class="fas fa-arrow-up"></i>
             </button>
          
